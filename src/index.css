@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/* ===== Design System Tokens ===== */
+@theme {
+  /* Colors - from Framer AI Audit */
+  --color-ink: rgb(10 10 10);
+  --color-paper: rgb(245 245 245);
+  --color-white: rgb(255 255 255);
+  --color-muted: rgb(102 97 97);
+  --color-accent: rgb(249 69 45);
+  --color-line: rgb(102 97 97 / 0.12);
+
+  /* Typography */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Container */
+  --max-width-content: 1200px;
+
+  /* Border Radius */
+  --radius-card: 16px;
+  --radius-pill: 9999px;
+
+  /* Section spacing */
+  --spacing-section: 156px;
+  --spacing-section-md: 80px;
+  --spacing-section-sm: 60px;
+}
+
+/* ===== Global Reset ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* Prevent layout shift from scrollbar */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-ink);
+  color: var(--color-white);
+}
+
+/* Remove default button styles */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
