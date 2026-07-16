@@ -109,7 +109,7 @@ const Hero = () => {
           <img
             src={heroImage}
             alt="Creative studio editorial portrait"
-            className="w-full h-[110%] object-cover object-[center_20%]"
+            className="w-full h-[110%] object-cover object-[center_10%] md:object-[center_12%]"
           />
         ) : (
           <div className="w-full h-[110%] bg-gradient-to-br from-[rgb(25,25,30)] via-[rgb(35,30,28)] to-[rgb(20,20,25)]" />
@@ -156,27 +156,31 @@ const Hero = () => {
             to the Heart of Brands
           </motion.p>
 
-          {/* ® Symbol — large, right aligned above text */}
-          <motion.span
+          {/* Large "haries" display text — centered, bottom-anchored */}
+          <motion.div
             variants={textChildVariants}
-            className="absolute text-white font-light select-none leading-none
-              right-[8%] bottom-[40%] text-[40px]
-              md:right-[8%] md:bottom-[45%] md:text-[60px]
-              lg:right-[10%] lg:bottom-[45%] lg:text-[90px]"
+            className="absolute bottom-[-2%] md:bottom-[-4%] lg:bottom-[-5%] left-0 right-0 w-full flex justify-center items-end select-none"
           >
-            ®
-          </motion.span>
-
-          {/* Large "haries" display text — lower portion of hero */}
-          <motion.h1
-            variants={textChildVariants}
-            className="absolute bottom-0 md:bottom-[-10px] lg:bottom-[-20px] left-6 md:left-[40px] lg:left-[60px] right-6 md:right-[40px] lg:right-[60px] text-white font-semibold leading-[0.85] tracking-[-0.05em] select-none"
-            style={{
-              fontSize: "clamp(80px, 25vw, 360px)",
-            }}
-          >
-            haries
-          </motion.h1>
+            <h1
+              className="relative text-white font-extrabold leading-[0.82] tracking-[-0.05em]"
+              style={{
+                fontFamily: "'General Sans', sans-serif",
+                fontSize: "clamp(80px, 24vw, 380px)",
+              }}
+            >
+              haries
+              <sup
+                className="font-light relative"
+                style={{
+                  fontSize: "clamp(30px, 6vw, 90px)",
+                  top: "-0.55em",
+                  marginLeft: "0.02em",
+                }}
+              >
+                ®
+              </sup>
+            </h1>
+          </motion.div>
         </div>
       </motion.div>
 
