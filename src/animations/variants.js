@@ -33,7 +33,7 @@ export const navbarEntrance = {
       stiffness: 400,
       damping: 80,
       mass: 1,
-      delay: 2,
+      delay: 1.9,
     },
   },
 };

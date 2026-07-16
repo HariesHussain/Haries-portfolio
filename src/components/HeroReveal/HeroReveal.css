@@ -1,0 +1,24 @@
+/* HeroReveal — Grid cell wipe overlay */
+
+.hero-reveal-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  pointer-events: none;
+  /* Grid template set via inline style for dynamic col/row count */
+}
+
+.hero-reveal-cell {
+  /* Each cell is a paper-colored rectangle that masks the image behind.
+     It shrinks vertically via clip-path to reveal the image. */
+  background-color: rgb(245, 245, 245);
+  will-change: clip-path;
+  /* Subtle 1px border to form the grid lines visible in initial state */
+  box-shadow: inset 0 0 0 0.5px rgba(200, 200, 200, 0.3);
+}
+
+/* Once reveal is complete, remove the grid entirely */
+.hero-reveal-grid--done {
+  display: none;
+}
