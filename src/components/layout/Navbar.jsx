@@ -23,7 +23,7 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 bg-paper"
     >
       <div className="mx-auto w-full max-w-content px-6 md:px-[40px] lg:px-[60px]">
-        <div className="flex items-center justify-between py-4 md:py-5 lg:py-[22px]">
+        <div className="flex items-center justify-between py-2 md:py-2.5 lg:py-[10px]">
           {/* Logo */}
           <a
             href="/"
@@ -33,7 +33,7 @@ const Navbar = () => {
             <img 
               src={logoImage} 
               alt="Haries Logo" 
-              className="h-[65px] md:h-[85px] lg:h-[100px] w-auto" 
+              className="h-[48px] md:h-[60px] lg:h-[72px] w-auto" 
             />
           </a>
 
@@ -61,13 +61,13 @@ const Navbar = () => {
 
           {/* Hamburger Menu Button */}
           <button
-            className="relative flex items-center justify-center w-[54px] h-[38px] md:w-[64px] md:h-[44px] lg:w-[76px] lg:h-[50px] bg-ink rounded-[10px] lg:rounded-[12px] flex-shrink-0 ml-[40px] lg:ml-[60px]"
+            className="relative flex items-center justify-center w-[46px] h-[32px] md:w-[56px] md:h-[38px] lg:w-[66px] lg:h-[42px] bg-ink rounded-[8px] lg:rounded-[10px] flex-shrink-0 ml-[40px] lg:ml-[60px]"
             aria-label="Open menu"
           >
             <div className="flex flex-col items-center justify-center gap-[4px] lg:gap-[5px]">
-              <span className="block w-[18px] lg:w-[22px] h-[1.5px] bg-white rounded-full" />
-              <span className="block w-[18px] lg:w-[22px] h-[1.5px] bg-white rounded-full" />
-              <span className="block w-[18px] lg:w-[22px] h-[1.5px] bg-white rounded-full" />
+              <span className="block w-[16px] lg:w-[20px] h-[1.5px] bg-white rounded-full" />
+              <span className="block w-[16px] lg:w-[20px] h-[1.5px] bg-white rounded-full" />
+              <span className="block w-[16px] lg:w-[20px] h-[1.5px] bg-white rounded-full" />
             </div>
           </button>
         </div>
