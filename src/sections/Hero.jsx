@@ -147,7 +147,7 @@ const Hero = () => {
           {/* Tagline — top-left, below navbar area */}
           <motion.p
             variants={textChildVariants}
-            className="absolute top-[140px] md:top-[160px] lg:top-[180px] left-[115px] md:left-[145px] lg:left-[175px] text-white text-[15px] md:text-[16px] lg:text-[17px] font-medium leading-[1.7] tracking-[0.02em]"
+            className="absolute top-[140px] md:top-[160px] lg:top-[180px] left-12 md:left-[80px] lg:left-[120px] max-w-[280px] md:max-w-[320px] lg:max-w-[400px] text-white text-[15px] md:text-[16px] lg:text-[17px] font-medium leading-[1.7] tracking-[0.02em]"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Creating Visual
@@ -173,12 +173,12 @@ const Hero = () => {
               <span className="relative inline-block">
                 S
                 <span
-                  className="absolute font-light text-white"
+                  className="absolute font-light"
                   style={{
-                    fontSize: "clamp(18px, 2.8vw, 42px)",
-                    top: "-0.15em",
-                    right: "-0.55em",
-                    lineHeight: 1,
+                    fontSize: "clamp(24px, 4vw, 55px)",
+                    top: "0",
+                    right: "0",
+                    transform: "translate(80%, -45%)",
                   }}
                 >
                   ®
