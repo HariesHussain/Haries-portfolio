@@ -147,7 +147,8 @@ const Hero = () => {
           {/* Tagline — top-left, below navbar area */}
           <motion.p
             variants={textChildVariants}
-            className="absolute top-[20vh] md:top-[25vh] lg:top-[25vh] left-6 md:left-[40px] lg:left-[60px] text-white text-[16px] md:text-[18px] lg:text-[20px] font-medium leading-[1.5] max-w-[200px] md:max-w-[240px] lg:max-w-[280px]"
+            className="absolute top-[140px] md:top-[160px] lg:top-[180px] left-6 md:left-[40px] lg:left-[60px] text-white text-[15px] md:text-[16px] lg:text-[17px] font-medium leading-[1.6] tracking-[0.01em]"
+            style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Creating Visual
             <br />
@@ -156,13 +157,13 @@ const Hero = () => {
             to the Heart of Brands
           </motion.p>
 
-          {/* Large "haries" display text — centered, bottom-anchored */}
+          {/* Large "HARIES" display text — centered, bottom-anchored */}
           <motion.div
             variants={textChildVariants}
-            className="absolute bottom-0 left-0 right-0 w-full flex justify-center items-end select-none pb-2 md:pb-4 lg:pb-6"
+            className="absolute bottom-0 left-0 right-0 w-full flex justify-center items-end select-none pb-0 md:pb-2 lg:pb-3"
           >
             <h1
-              className="relative text-white font-black leading-[1.1] tracking-[-0.02em]"
+              className="relative text-white font-black leading-none tracking-[-0.02em]"
               style={{
                 fontFamily: "'General Sans', sans-serif",
                 fontSize: "clamp(100px, 16vw, 240px)",
@@ -174,7 +175,7 @@ const Hero = () => {
                 style={{
                   fontSize: "clamp(24px, 4vw, 55px)",
                   top: "-0.65em",
-                  marginLeft: "0.08em",
+                  marginLeft: "0.04em",
                 }}
               >
                 ®

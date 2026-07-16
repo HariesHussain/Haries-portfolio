@@ -12,6 +12,7 @@
  */
 import { motion } from "framer-motion";
 import { navbarEntrance } from "@/animations/variants";
+import logoImage from "@/assets/images/hero/logo.png";
 
 const Navbar = () => {
   return (
@@ -22,26 +23,26 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 bg-paper"
     >
       <div className="mx-auto w-full max-w-content px-6 md:px-[40px] lg:px-[60px]">
-        <div className="flex items-center justify-between py-6 md:py-8 lg:py-10">
+        <div className="flex items-center justify-between py-4 md:py-5 lg:py-[22px]">
           {/* Logo */}
           <a
             href="/"
-            className="text-[28px] md:text-[36px] lg:text-[42px] font-black tracking-[-0.04em] text-ink flex items-start"
-            style={{ fontFamily: "'General Sans', sans-serif" }}
+            className="flex items-center"
           >
-            HARIES
-            <sup className="text-[12px] md:text-[16px] lg:text-[18px] font-bold mt-[6px] md:mt-[8px] ml-[2px]">
-              ®
-            </sup>
+            <img 
+              src={logoImage} 
+              alt="Haries Logo" 
+              className="h-[24px] md:h-[28px] lg:h-[32px] w-auto" 
+            />
           </a>
 
           {/* Desktop/Tablet Navigation Links */}
-          <div className="hidden md:flex items-center gap-[60px] lg:gap-[80px] text-[16px] lg:text-[17px] font-medium text-ink">
+          <div className="hidden md:flex items-center gap-[60px] lg:gap-[80px] text-[14px] md:text-[15px] font-medium text-ink tracking-tight">
             <a
-              href="#services"
+              href="#about"
               className="hover:text-accent transition-colors duration-500"
             >
-              Services
+              About
             </a>
             <a
               href="#works"
@@ -59,13 +60,13 @@ const Navbar = () => {
 
           {/* Hamburger Menu Button */}
           <button
-            className="relative flex items-center justify-center w-[64px] h-[48px] md:w-[76px] md:h-[54px] lg:w-[86px] lg:h-[60px] bg-ink rounded-[14px] lg:rounded-[18px] flex-shrink-0"
+            className="relative flex items-center justify-center w-[54px] h-[38px] md:w-[64px] md:h-[44px] lg:w-[76px] lg:h-[50px] bg-ink rounded-[10px] lg:rounded-[12px] flex-shrink-0"
             aria-label="Open menu"
           >
-            <div className="flex flex-col items-center justify-center gap-[5px] lg:gap-[6px]">
-              <span className="block w-[22px] lg:w-[26px] h-[2px] bg-white rounded-full" />
-              <span className="block w-[22px] lg:w-[26px] h-[2px] bg-white rounded-full" />
-              <span className="block w-[22px] lg:w-[26px] h-[2px] bg-white rounded-full" />
+            <div className="flex flex-col items-center justify-center gap-[4px] lg:gap-[5px]">
+              <span className="block w-[18px] lg:w-[22px] h-[1.5px] bg-white rounded-full" />
+              <span className="block w-[18px] lg:w-[22px] h-[1.5px] bg-white rounded-full" />
+              <span className="block w-[18px] lg:w-[22px] h-[1.5px] bg-white rounded-full" />
             </div>
           </button>
         </div>
