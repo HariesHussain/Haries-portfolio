@@ -26,10 +26,11 @@ const Navbar = () => {
           {/* Logo */}
           <a
             href="/"
-            className="text-[28px] md:text-[36px] lg:text-[42px] font-bold tracking-[-0.04em] text-ink flex items-start"
+            className="text-[28px] md:text-[36px] lg:text-[42px] font-black tracking-[-0.04em] text-ink flex items-start"
+            style={{ fontFamily: "'General Sans', sans-serif" }}
           >
-            haries
-            <sup className="text-[12px] md:text-[16px] lg:text-[18px] font-semibold mt-[6px] md:mt-[8px] ml-[2px]">
+            HARIES
+            <sup className="text-[12px] md:text-[16px] lg:text-[18px] font-bold mt-[6px] md:mt-[8px] ml-[2px]">
               ®
             </sup>
           </a>
