@@ -96,7 +96,7 @@ const Hero = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-screen overflow-hidden bg-paper"
+      className="sticky top-0 w-full h-screen overflow-hidden bg-paper z-0"
     >
       {/* ── Hero Background Image ──
           Always rendered — visibility controlled by the grid mask above.
