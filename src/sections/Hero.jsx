@@ -109,7 +109,7 @@ const Hero = () => {
           <img
             src={heroImage}
             alt="Creative studio editorial portrait"
-            className="w-full h-[110%] object-cover object-[center_5%] md:object-[center_8%]"
+            className="w-full h-[110%] object-cover object-[center_20%]"
           />
         ) : (
           <div className="w-full h-[110%] bg-gradient-to-br from-[rgb(25,25,30)] via-[rgb(35,30,28)] to-[rgb(20,20,25)]" />
@@ -162,19 +162,19 @@ const Hero = () => {
             className="absolute bottom-0 left-0 right-0 w-full flex justify-center items-end select-none pb-2 md:pb-4 lg:pb-6"
           >
             <h1
-              className="relative text-white font-black leading-[1.1] tracking-[-0.05em]"
+              className="relative text-white font-black leading-[1.1] tracking-[-0.02em]"
               style={{
                 fontFamily: "'General Sans', sans-serif",
-                fontSize: "clamp(80px, 24vw, 380px)",
+                fontSize: "clamp(100px, 16vw, 240px)",
               }}
             >
               HARIES
               <sup
                 className="font-light relative"
                 style={{
-                  fontSize: "clamp(30px, 6vw, 90px)",
+                  fontSize: "clamp(24px, 4vw, 55px)",
                   top: "-0.65em",
-                  marginLeft: "0.02em",
+                  marginLeft: "0.08em",
                 }}
               >
                 ®
