@@ -21,21 +21,21 @@ const Navbar = () => {
       animate="visible"
       className="fixed top-0 left-0 right-0 z-50 bg-paper"
     >
-      <div className="mx-auto w-full max-w-content px-5 md:px-[30px]">
-        <div className="flex items-center justify-between py-5 md:py-6">
+      <div className="mx-auto w-full max-w-content px-6 md:px-[40px] lg:px-[60px]">
+        <div className="flex items-center justify-between py-6 md:py-8 lg:py-10">
           {/* Logo */}
           <a
             href="/"
-            className="text-[22px] md:text-[24px] font-semibold tracking-tight text-ink"
+            className="text-[28px] md:text-[36px] lg:text-[42px] font-bold tracking-[-0.04em] text-ink flex items-start"
           >
             haries
-            <sup className="text-[10px] md:text-[11px] font-medium -top-[10px] ml-[1px]">
+            <sup className="text-[12px] md:text-[16px] lg:text-[18px] font-semibold mt-[6px] md:mt-[8px] ml-[2px]">
               ®
             </sup>
           </a>
 
           {/* Desktop/Tablet Navigation Links */}
-          <div className="hidden md:flex items-center gap-[56px] text-[16px] font-medium text-ink">
+          <div className="hidden md:flex items-center gap-[60px] lg:gap-[80px] text-[16px] lg:text-[17px] font-medium text-ink">
             <a
               href="#services"
               className="hover:text-accent transition-colors duration-500"
@@ -58,13 +58,13 @@ const Navbar = () => {
 
           {/* Hamburger Menu Button */}
           <button
-            className="relative flex items-center justify-center w-[48px] h-[40px] bg-ink rounded-[12px] flex-shrink-0"
+            className="relative flex items-center justify-center w-[64px] h-[48px] md:w-[76px] md:h-[54px] lg:w-[86px] lg:h-[60px] bg-ink rounded-[14px] lg:rounded-[18px] flex-shrink-0"
             aria-label="Open menu"
           >
-            <div className="flex flex-col items-center justify-center gap-[5px]">
-              <span className="block w-[18px] h-[1.5px] bg-white rounded-full" />
-              <span className="block w-[18px] h-[1.5px] bg-white rounded-full" />
-              <span className="block w-[18px] h-[1.5px] bg-white rounded-full" />
+            <div className="flex flex-col items-center justify-center gap-[5px] lg:gap-[6px]">
+              <span className="block w-[22px] lg:w-[26px] h-[2px] bg-white rounded-full" />
+              <span className="block w-[22px] lg:w-[26px] h-[2px] bg-white rounded-full" />
+              <span className="block w-[22px] lg:w-[26px] h-[2px] bg-white rounded-full" />
             </div>
           </button>
         </div>

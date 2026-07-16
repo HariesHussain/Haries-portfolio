@@ -39,8 +39,7 @@ const TEXT_CHILD_STAGGER_S = 0.12;
 const TEXT_CHILD_DURATION_S = 0.7;
 const TEXT_EASING = [0.25, 0.1, 0.25, 1];
 
-// Bottom info bar transitions from ink → white as image reveals
-const INFO_BAR_DELAY_S = (INITIAL_DELAY_MS + 200) / 1000;
+
 
 // ─── Variants ───────────────────────────────────────────────────────
 
@@ -78,17 +77,7 @@ const overlayVariants = {
   },
 };
 
-const infoBarVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      delay: INFO_BAR_DELAY_S,
-      ease: "easeOut",
-    },
-  },
-};
+
 
 // ─── Component ──────────────────────────────────────────────────────
 
@@ -158,7 +147,7 @@ const Hero = () => {
           {/* Tagline — top-left, below navbar area */}
           <motion.p
             variants={textChildVariants}
-            className="absolute top-[100px] md:top-[120px] lg:top-[120px] left-5 md:left-[30px] text-white text-[14px] md:text-[16px] lg:text-[18px] font-medium leading-[1.55] max-w-[180px] md:max-w-[200px] lg:max-w-[220px]"
+            className="absolute top-[20vh] md:top-[25vh] lg:top-[25vh] left-6 md:left-[40px] lg:left-[60px] text-white text-[16px] md:text-[18px] lg:text-[20px] font-medium leading-[1.5] max-w-[200px] md:max-w-[240px] lg:max-w-[280px]"
           >
             Creating Visual
             <br />
@@ -167,13 +156,13 @@ const Hero = () => {
             to the Heart of Brands
           </motion.p>
 
-          {/* ® Symbol — right side, ~55% down */}
+          {/* ® Symbol — large, right aligned above text */}
           <motion.span
             variants={textChildVariants}
-            className="absolute text-white font-light select-none
-              right-5 bottom-[calc(30%+60px)] text-[32px]
-              md:right-[30px] md:bottom-auto md:top-[52%] md:text-[50px]
-              lg:top-[50%] lg:text-[64px]"
+            className="absolute text-white font-light select-none leading-none
+              right-[8%] bottom-[40%] text-[40px]
+              md:right-[8%] md:bottom-[45%] md:text-[60px]
+              lg:right-[10%] lg:bottom-[45%] lg:text-[90px]"
           >
             ®
           </motion.span>
@@ -181,9 +170,9 @@ const Hero = () => {
           {/* Large "haries" display text — lower portion of hero */}
           <motion.h1
             variants={textChildVariants}
-            className="absolute bottom-[65px] md:bottom-[75px] lg:bottom-[85px] left-5 md:left-[30px] right-5 md:right-[30px] text-white font-semibold leading-[0.85] tracking-[-0.04em] select-none"
+            className="absolute bottom-0 md:bottom-[-10px] lg:bottom-[-20px] left-6 md:left-[40px] lg:left-[60px] right-6 md:right-[40px] lg:right-[60px] text-white font-semibold leading-[0.85] tracking-[-0.05em] select-none"
             style={{
-              fontSize: "clamp(60px, 17.5vw, 240px)",
+              fontSize: "clamp(80px, 25vw, 360px)",
             }}
           >
             haries
@@ -191,73 +180,7 @@ const Hero = () => {
         </div>
       </motion.div>
 
-      {/* ── Bottom Information Bar ──
-          Fades in during the reveal — starts dark, but always white
-          since image is always behind (grid handles the masking) */}
-      <motion.div
-        className="absolute bottom-0 left-0 right-0 z-20"
-        variants={infoBarVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <div className="mx-auto w-full max-w-content px-5 md:px-[30px]">
-          {/* Desktop / Tablet — horizontal row */}
-          <div className="hidden md:flex items-center justify-between py-5 lg:py-6 text-[14px] font-medium text-white">
-            <span>Available For Work</span>
-            <span className="flex items-center gap-3">
-              <span>In.</span>
-              <span>Tw.</span>
-              <span>Fc.</span>
-            </span>
-            <span className="flex items-center gap-1.5">
-              Scroll To View More
-              <svg
-                className="w-3.5 h-3.5 mt-0.5"
-                viewBox="0 0 14 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7 1V13M7 13L1 7M7 13L13 7"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
-            <span>©2025</span>
-          </div>
 
-          {/* Mobile — stacked vertically, center-aligned */}
-          <div className="flex md:hidden flex-col items-center gap-2 py-4 text-[13px] font-medium text-white">
-            <span>Available For Work</span>
-            <span className="flex items-center gap-2.5">
-              <span>In.</span>
-              <span>Tw.</span>
-              <span>Fc.</span>
-            </span>
-            <span>©2025</span>
-            <span className="flex items-center gap-1.5">
-              Scroll To View More
-              <svg
-                className="w-3 h-3 mt-0.5"
-                viewBox="0 0 14 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7 1V13M7 13L1 7M7 13L13 7"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 };
