@@ -28,16 +28,17 @@ const Navbar = () => {
           <a
             href="/"
             className="flex items-center"
+            style={{ marginLeft: "2cm" }}
           >
             <img 
               src={logoImage} 
               alt="Haries Logo" 
-              className="h-[24px] md:h-[28px] lg:h-[32px] w-auto" 
+              className="h-[65px] md:h-[85px] lg:h-[100px] w-auto" 
             />
           </a>
 
           {/* Desktop/Tablet Navigation Links */}
-          <div className="hidden md:flex items-center gap-[60px] lg:gap-[80px] text-[14px] md:text-[15px] font-medium text-ink tracking-tight">
+          <div className="hidden md:flex items-center gap-[80px] lg:gap-[110px] text-[14px] md:text-[15px] font-medium text-ink tracking-tight">
             <a
               href="#about"
               className="hover:text-accent transition-colors duration-500"
@@ -60,7 +61,7 @@ const Navbar = () => {
 
           {/* Hamburger Menu Button */}
           <button
-            className="relative flex items-center justify-center w-[54px] h-[38px] md:w-[64px] md:h-[44px] lg:w-[76px] lg:h-[50px] bg-ink rounded-[10px] lg:rounded-[12px] flex-shrink-0"
+            className="relative flex items-center justify-center w-[54px] h-[38px] md:w-[64px] md:h-[44px] lg:w-[76px] lg:h-[50px] bg-ink rounded-[10px] lg:rounded-[12px] flex-shrink-0 ml-[40px] lg:ml-[60px]"
             aria-label="Open menu"
           >
             <div className="flex flex-col items-center justify-center gap-[4px] lg:gap-[5px]">
