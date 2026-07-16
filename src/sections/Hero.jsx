@@ -27,7 +27,6 @@ import HeroReveal from "@/components/HeroReveal/HeroReveal";
 import {
   INITIAL_DELAY_MS,
   CELL_OPEN_DURATION_MS,
-  STAGGER_RING_INTERVAL_MS,
 } from "@/components/HeroReveal/constants";
 
 import heroImage from "@/assets/images/hero/hero-image.webp";
