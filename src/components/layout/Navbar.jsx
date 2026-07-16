@@ -1,67 +1,46 @@
 /**
- * Navbar component — Fixed, transparent.
+ * Navbar component — Fixed with paper background.
  *
- * From Framer AI Audit:
- * ─ Fixed at the top, full-width
- * ─ Desktop/tablet: logo + primary links + menu control
- * ─ Phone: logo + menu control (links hidden)
- * ─ Enters from 60px above, starts transparent
+ * From reference screenshot:
+ * ─ Solid paper (rgb(245,245,245)) background strip at top
+ * ─ "haries®" logo left, dark text
+ * ─ "Services", "Works", "Contact" links centered, dark text
+ * ─ Dark hamburger button on the right
+ * ─ Text stays dark at all times (paper bg is always behind)
+ * ─ Enters from 60px above, delayed by 2 seconds
  * ─ Spring: stiffness 400, damping 80, mass 1
- * ─ Delayed by 2 seconds
- *
- * From Screenshot 224146.png (final state):
- * ─ "norell" logo with ® superscript, ~24px, weight 600, left-aligned
- * ─ Nav links: "About", "Works", "Contact" — ~16px, weight 500, spaced ~60-80px apart
- * ─ Hamburger button: dark near-black rounded rectangle (~48×40px), border-radius ~12px
- * ─ Three horizontal lines inside the hamburger, white, ~18px wide
- * ─ Navbar padding: ~20px vertical (total height ~80px with padding)
- * ─ Side padding matches container: 30px desktop, 20px mobile
- *
- * From Screenshot 223831.png (initial state — light bg):
- * ─ Logo and links are dark (ink color) on light background
- * ─ Hamburger button is dark with white lines
- *
- * From Screenshot 224146.png (final state — dark hero image):
- * ─ Logo and links become white on dark background
- * ─ Hamburger button stays dark with white lines
  */
 import { motion } from "framer-motion";
 import { navbarEntrance } from "@/animations/variants";
 
-const Navbar = ({ isDark = false }) => {
+const Navbar = () => {
   return (
     <motion.nav
       variants={navbarEntrance}
       initial="hidden"
       animate="visible"
-      className="fixed top-0 left-0 right-0 z-50"
+      className="fixed top-0 left-0 right-0 z-50 bg-paper"
     >
       <div className="mx-auto w-full max-w-content px-5 md:px-[30px]">
         <div className="flex items-center justify-between py-5 md:py-6">
           {/* Logo */}
           <a
             href="/"
-            className={`text-[22px] md:text-[24px] font-semibold tracking-tight transition-colors duration-500 ${
-              isDark ? "text-white" : "text-ink"
-            }`}
+            className="text-[22px] md:text-[24px] font-semibold tracking-tight text-ink"
           >
-            norell
+            haries
             <sup className="text-[10px] md:text-[11px] font-medium -top-[10px] ml-[1px]">
               ®
             </sup>
           </a>
 
           {/* Desktop/Tablet Navigation Links */}
-          <div
-            className={`hidden md:flex items-center gap-[56px] text-[16px] font-medium transition-colors duration-500 ${
-              isDark ? "text-white" : "text-ink"
-            }`}
-          >
+          <div className="hidden md:flex items-center gap-[56px] text-[16px] font-medium text-ink">
             <a
-              href="#about"
+              href="#services"
               className="hover:text-accent transition-colors duration-500"
             >
-              About
+              Services
             </a>
             <a
               href="#works"

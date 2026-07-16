@@ -276,8 +276,8 @@ const Hero = () => {
           </motion.p>
 
           {/* ® Symbol — desktop: upper-right area ~55% down
-              tablet: bottom-right above "norell" text
-              phone: right side, above "norell" */}
+              tablet: bottom-right above "haries" text
+              phone: right side, above "haries" */}
           <motion.span
             variants={heroTextChild}
             className="absolute text-white font-light select-none
@@ -288,7 +288,7 @@ const Hero = () => {
             ®
           </motion.span>
 
-          {/* Large "norell" display text — lower portion of hero
+          {/* Large "haries" display text — lower portion of hero
               Desktop: ~220px, fills ~85% container width
               Tablet: ~120px
               Phone: ~60px
@@ -300,7 +300,7 @@ const Hero = () => {
               fontSize: "clamp(60px, 17.5vw, 240px)",
             }}
           >
-            norell
+            haries
           </motion.h1>
         </div>
       </motion.div>
@@ -310,8 +310,7 @@ const Hero = () => {
         <div className="mx-auto w-full max-w-content px-5 md:px-[30px]">
           {/* Desktop / Tablet — horizontal row */}
           <div
-            className={`hidden md:flex items-center justify-between py-5 lg:py-6 text-[14px] font-medium transition-colors duration-700 ${isRevealed ? "text-white" : "text-ink"
-              }`}
+            className="hidden md:flex items-center justify-between py-5 lg:py-6 text-[14px] font-medium text-white"
           >
             <span>Available For Work</span>
             <span className="flex items-center gap-3">
@@ -341,8 +340,7 @@ const Hero = () => {
 
           {/* Mobile — stacked vertically, center-aligned */}
           <div
-            className={`flex md:hidden flex-col items-center gap-2 py-4 text-[13px] font-medium transition-colors duration-700 ${isRevealed ? "text-white" : "text-ink"
-              }`}
+            className="flex md:hidden flex-col items-center gap-2 py-4 text-[13px] font-medium text-white"
           >
             <span>Available For Work</span>
             <span className="flex items-center gap-2.5">
