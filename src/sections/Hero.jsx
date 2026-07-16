@@ -159,10 +159,10 @@ const Hero = () => {
           {/* Large "haries" display text — centered, bottom-anchored */}
           <motion.div
             variants={textChildVariants}
-            className="absolute bottom-[-2%] md:bottom-[-4%] lg:bottom-[-5%] left-0 right-0 w-full flex justify-center items-end select-none"
+            className="absolute bottom-0 left-0 right-0 w-full flex justify-center items-end select-none pb-2 md:pb-4 lg:pb-6"
           >
             <h1
-              className="relative text-white font-extrabold leading-[0.82] tracking-[-0.05em]"
+              className="relative text-white font-extrabold leading-[1.1] tracking-[-0.05em]"
               style={{
                 fontFamily: "'General Sans', sans-serif",
                 fontSize: "clamp(80px, 24vw, 380px)",
