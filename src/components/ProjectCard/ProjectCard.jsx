@@ -37,8 +37,8 @@ const ProjectCard = ({ project, isLarge }) => {
   const mouseY = useMotionValue(0);
 
   // Smooth springs for tracking cursor positioning
-  const springX = useSpring(mouseX, { stiffness: 180, damping: 18 });
-  const springY = useSpring(mouseY, { stiffness: 180, damping: 18 });
+  const springX = useSpring(mouseX, { stiffness: 120, damping: 15 });
+  const springY = useSpring(mouseY, { stiffness: 120, damping: 15 });
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
@@ -47,27 +47,11 @@ const ProjectCard = ({ project, isLarge }) => {
     mouseY.set(e.clientY - rect.top);
   };
 
-  const cardRevealVariants = {
-    hidden: { opacity: 0, y: 55, scale: 0.96 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 90,
-        damping: 18,
-      },
-    },
-  };
+
 
   return (
     <motion.div
       ref={cardRef}
-      variants={cardRevealVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
       className="group relative overflow-hidden rounded-[20px] bg-paper select-none cursor-pointer w-full h-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -81,8 +65,8 @@ const ProjectCard = ({ project, isLarge }) => {
           filter: isHovered ? "blur(3px) brightness(0.7)" : "blur(0px) brightness(1.0)",
         }}
         transition={{
-          duration: 0.5,
-          ease: [0.25, 1, 0.5, 1],
+          duration: 0.4,
+          ease: "easeOut",
         }}
       >
         <img
@@ -104,7 +88,7 @@ const ProjectCard = ({ project, isLarge }) => {
         }}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: isHovered ? 1 : 0, opacity: isHovered ? 1 : 0 }}
-        transition={{ type: "spring", stiffness: 350, damping: 25 }}
+        transition={{ type: "spring", stiffness: 250, damping: 22 }}
       >
         <HoverArrow />
       </motion.div>
@@ -131,8 +115,8 @@ const ProjectCard = ({ project, isLarge }) => {
             }}
             transition={{
               type: "spring",
-              stiffness: 400,
-              damping: 35,
+              stiffness: 250,
+              damping: 30,
             }}
           >
             {renderLogo(project.hasLogo)}

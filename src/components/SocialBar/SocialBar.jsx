@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 
 const SocialBar = () => {
   return (
-    <div className="w-full bg-white border-b border-line h-[70px] flex items-center select-none z-30 relative">
-      <div className="mx-auto w-full max-w-content px-5 md:px-[30px] flex items-center justify-between text-[13px] md:text-[14px] font-medium text-ink tracking-tight">
+    <div className="w-full bg-white border-b border-line h-[56px] flex items-center select-none z-30 relative">
+      <div className="mx-auto w-full max-w-content px-[clamp(16px,4vw,48px)] flex items-center justify-between text-[14px] font-medium text-ink tracking-tight">
         
         {/* Available For Work Status */}
         <div className="flex items-center gap-2">
@@ -50,7 +50,7 @@ const SocialBar = () => {
 
         {/* Copyright */}
         <div className="text-muted font-normal">
-          ©2025
+          ©2026
         </div>
 
       </div>

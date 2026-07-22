@@ -1,10 +1,10 @@
 /**
  * Motion variants for the Norell portfolio.
- * All values derived from the Framer AI Audit document.
+ * Optimized for smooth, lag-free animations with reduced spring stiffness.
  *
- * Core reveal: opacity 0→1, y 60→0, spring 400/80/1
- * Navbar entrance: opacity 0→1, y -60→0, spring 400/80, delay 2s
- * Preloader sequence: 6 variant stages, tween 1s, delay 0.5s
+ * Core reveal: opacity 0→1, y 60→0, smooth spring
+ * Navbar entrance: opacity 0→1, y -60→0, smooth spring
+ * Reduced stiffness values to prevent jank and choppy motion
  */
 
 // ─── Core reveal (used across most sections) ───
@@ -15,8 +15,8 @@ export const rise = {
     y: 0,
     transition: {
       type: "spring",
-      stiffness: 400,
-      damping: 80,
+      stiffness: 200,
+      damping: 25,
       mass: 1,
     },
   },
@@ -30,8 +30,8 @@ export const navbarEntrance = {
     y: 0,
     transition: {
       type: "spring",
-      stiffness: 400,
-      damping: 80,
+      stiffness: 200,
+      damping: 25,
       mass: 1,
       delay: 1.9,
     },
@@ -46,8 +46,8 @@ export const slideLeft = {
     x: 0,
     transition: {
       type: "spring",
-      stiffness: 400,
-      damping: 80,
+      stiffness: 200,
+      damping: 25,
       mass: 1,
     },
   },
@@ -61,8 +61,8 @@ export const slideRight = {
     x: 0,
     transition: {
       type: "spring",
-      stiffness: 400,
-      damping: 80,
+      stiffness: 200,
+      damping: 25,
       mass: 1,
       delay: 0.2,
     },
@@ -77,8 +77,8 @@ export const cardScale = {
     scale: 1,
     transition: {
       type: "spring",
-      stiffness: 400,
-      damping: 30,
+      stiffness: 150,
+      damping: 20,
       mass: 1,
     },
   },
@@ -147,11 +147,11 @@ export const buttonHover = {
   rest: {
     backgroundColor: "rgb(10 10 10)",
     color: "rgb(255 255 255)",
-    transition: { type: "spring", duration: 0.4 },
+    transition: { type: "spring", stiffness: 200, damping: 25 },
   },
   hover: {
     backgroundColor: "rgb(249 69 45)",
     color: "rgb(255 255 255)",
-    transition: { type: "spring", duration: 0.4 },
+    transition: { type: "spring", stiffness: 200, damping: 25 },
   },
 };

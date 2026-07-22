@@ -22,38 +22,37 @@ const Navbar = () => {
       animate="visible"
       className="fixed top-0 left-0 right-0 z-50 bg-paper"
     >
-      <div className="mx-auto w-full max-w-content px-6 md:px-[40px] lg:px-[60px]">
-        <div className="flex items-center justify-between py-2 md:py-2.5 lg:py-[10px]">
+      <div className="mx-auto w-full max-w-content px-[clamp(16px,4vw,60px)]">
+        <div className="flex items-center justify-between py-[clamp(14px,2vw,22px)]">
           {/* Logo */}
           <a
             href="/"
             className="flex items-center"
-            style={{ marginLeft: "2cm" }}
           >
             <img 
               src={logoImage} 
               alt="Haries Logo" 
-              className="h-[48px] md:h-[60px] lg:h-[72px] w-auto" 
+              className="h-[clamp(40px,6vw,72px)] w-auto" 
             />
           </a>
 
           {/* Desktop/Tablet Navigation Links */}
-          <div className="hidden md:flex items-center gap-[80px] lg:gap-[110px] text-[14px] md:text-[15px] font-medium text-ink tracking-tight">
+          <div className="hidden md:flex items-center gap-[clamp(60px,8vw,110px)] text-[clamp(13px,2vw,15px)] font-medium text-ink tracking-tight">
             <a
               href="#about"
-              className="hover:text-accent transition-colors duration-500"
+              className="hover:text-accent transition-colors duration-400"
             >
               About
             </a>
             <a
               href="#works"
-              className="hover:text-accent transition-colors duration-500"
+              className="hover:text-accent transition-colors duration-400"
             >
               Works
             </a>
             <a
               href="#contact"
-              className="hover:text-accent transition-colors duration-500"
+              className="hover:text-accent transition-colors duration-400"
             >
               Contact
             </a>
@@ -61,13 +60,13 @@ const Navbar = () => {
 
           {/* Hamburger Menu Button */}
           <button
-            className="relative flex items-center justify-center w-[46px] h-[32px] md:w-[56px] md:h-[38px] lg:w-[66px] lg:h-[42px] bg-ink rounded-[8px] lg:rounded-[10px] flex-shrink-0 ml-[40px] lg:ml-[60px]"
+            className="relative flex items-center justify-center w-[clamp(42px,7vw,66px)] h-[clamp(30px,5vw,42px)] bg-ink rounded-[clamp(6px,1vw,10px)] flex-shrink-0 ml-[clamp(30px,5vw,60px)]"
             aria-label="Open menu"
           >
-            <div className="flex flex-col items-center justify-center gap-[4px] lg:gap-[5px]">
-              <span className="block w-[16px] lg:w-[20px] h-[1.5px] bg-white rounded-full" />
-              <span className="block w-[16px] lg:w-[20px] h-[1.5px] bg-white rounded-full" />
-              <span className="block w-[16px] lg:w-[20px] h-[1.5px] bg-white rounded-full" />
+            <div className="flex flex-col items-center justify-center gap-[clamp(3px,0.5vw,5px)]">
+              <span className="block w-[clamp(14px,2.5vw,20px)] h-[1.5px] bg-white rounded-full" />
+              <span className="block w-[clamp(14px,2.5vw,20px)] h-[1.5px] bg-white rounded-full" />
+              <span className="block w-[clamp(14px,2.5vw,20px)] h-[1.5px] bg-white rounded-full" />
             </div>
           </button>
         </div>

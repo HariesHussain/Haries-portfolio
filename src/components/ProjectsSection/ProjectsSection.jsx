@@ -38,18 +38,49 @@ const PROJECTS_DATA = [
 
 const ProjectsSection = () => {
   return (
-    <section className="w-full bg-white pt-[32px] md:pt-[48px] lg:pt-[60px] pb-[100px] md:pb-[130px] lg:pb-[156px] relative z-20">
+    <section className="w-full bg-white relative z-20" style={{ paddingTop: '130px', paddingBottom: 'clamp(80px, 10vw, 156px)' }}>
       <Container>
-        {/* Project Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-[80px] mb-[60px] md:mb-[80px] lg:mb-[90px]">
-          <div className="max-w-[700px]">
-            <h2 className="text-ink font-semibold tracking-[-1px] md:tracking-[-2px] lg:tracking-[-3px] leading-[1.05] text-[38px] md:text-[56px] lg:text-[85px] font-sans">
+        {/* Project Section Header — CSS Grid: 65% / 35% */}
+        <div className="grid grid-cols-1 lg:grid-cols-[65%_35%] gap-8 mb-[110px]">
+          {/* Left Column: Heading */}
+          <div>
+            <h2
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: 'clamp(68px, 6vw, 78px)',
+                fontWeight: 700,
+                lineHeight: 0.92,
+                letterSpacing: '-0.04em',
+                color: '#1A1A1A',
+                margin: 0,
+              }}
+            >
               Projects we're<br />
-              <span className="text-muted font-light opacity-80" style={{ fontWeight: 300 }}>proud of</span>
+              <span style={{ fontWeight: 300, color: '#666161' }}>proud of</span>
             </h2>
           </div>
-          <div className="max-w-[280px] md:pb-2">
-            <p className="text-muted text-[14px] md:text-[15px] lg:text-[16px] leading-[1.6] font-medium tracking-tight">
+
+          {/* Right Column: Paragraph — aligned to upper right corner */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              justifyContent: 'flex-end',
+              paddingTop: '8px',
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: '20px',
+                fontWeight: 400,
+                lineHeight: 1.55,
+                letterSpacing: '-0.01em',
+                color: '#666161',
+                margin: 0,
+                maxWidth: '300px',
+              }}
+            >
               A curated collection of projects that showcase my approach to design blending creativity.
             </p>
           </div>

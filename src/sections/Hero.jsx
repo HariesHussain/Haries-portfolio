@@ -147,7 +147,7 @@ const Hero = () => {
           {/* Tagline — top-left, below navbar area */}
           <motion.p
             variants={textChildVariants}
-            className="absolute top-[140px] md:top-[160px] lg:top-[180px] left-12 md:left-[80px] lg:left-[120px] max-w-[280px] md:max-w-[320px] lg:max-w-[400px] text-white text-[15px] md:text-[16px] lg:text-[17px] font-medium leading-[1.7] tracking-[0.02em]"
+            className="absolute top-[clamp(120px,15vw,180px)] left-[clamp(20px,5vw,120px)] max-w-[clamp(240px,40vw,400px)] text-white text-[clamp(13px,2vw,17px)] font-medium leading-[1.7] tracking-[0.02em]"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Creating Visual
