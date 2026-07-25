@@ -23,7 +23,13 @@ const TestimonialsSection = () => {
           className="w-full flex flex-col lg:min-h-[712px]"
         >
           {/* Header Container: 1200x187 matching div.framer-suj1lv */}
-          <div className="w-full min-h-[187px] mb-10 lg:mb-[80px]">
+          <div
+            className="w-full flex items-start"
+            style={{
+              minHeight: "187px",
+              marginBottom: "80px",
+            }}
+          >
             <h2
               style={{
                 fontFamily: "'Inter', sans-serif",
