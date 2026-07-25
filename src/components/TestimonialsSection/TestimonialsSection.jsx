@@ -44,8 +44,8 @@ const TestimonialsSection = () => {
             />
           </div>
 
-          {/* Right Column Content: 700px width matching div.framer-hqsl70 */}
-          <div className="w-full lg:w-[700px] flex flex-col justify-between pt-2">
+          {/* Right Column Content: 700px width, 343.39px height matching div.framer-hqsl70 */}
+          <div className="w-full lg:w-[700px] min-h-[343.39px] flex flex-col justify-between pt-1">
             {/* Quote Heading: 36px Inter #0A0A0A matching h4.framer-text */}
             <h3
               style={{
@@ -63,11 +63,8 @@ const TestimonialsSection = () => {
               noticeable increase.
             </h3>
 
-            {/* Divider Line */}
-            <div className="w-full h-[1px] bg-[#666161]/15 my-8 lg:my-10" />
-
-            {/* Author Information */}
-            <div>
+            {/* Author Information at bottom of 343.39px container */}
+            <div className="pt-8 lg:pt-12">
               <p
                 style={{
                   fontFamily: "'Inter', sans-serif",
