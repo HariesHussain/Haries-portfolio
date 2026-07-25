@@ -89,10 +89,10 @@ const ServicesSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
-          className="w-full flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-16 min-h-[550.21px]"
+          className="w-full flex flex-col lg:flex-row justify-between items-start lg:gap-[238px] min-h-[550.21px]"
         >
-          {/* Left Column: Interactive Services Accordion (w-full lg:w-[650px]) */}
-          <motion.div variants={itemVariants} className="w-full lg:w-[650px]">
+          {/* Left Column: Interactive Services Accordion (w-full lg:w-[655px]) */}
+          <motion.div variants={itemVariants} className="w-full lg:w-[655px] min-h-[550.21px] flex flex-col justify-between">
             {SERVICES_DATA.map((service, index) => {
               const isActive = index === activeIndex;
 
@@ -101,7 +101,7 @@ const ServicesSection = () => {
                   key={service.id}
                   onClick={() => setActiveIndex(index)}
                   onMouseEnter={() => setActiveIndex(index)}
-                  className="group cursor-pointer border-b border-[#666161]/30 py-6 lg:py-8 first:pt-0 transition-colors duration-300 select-none"
+                  className="group cursor-pointer border-b border-[#666161]/30 py-5 lg:py-6 first:pt-0 transition-colors duration-300 select-none"
                 >
                   <div className="flex items-baseline gap-3">
                     {/* Service Title */}
@@ -140,13 +140,13 @@ const ServicesSection = () => {
             })}
           </motion.div>
 
-          {/* Right Column: Feature Preview Card (307px width matching devtools spec) */}
+          {/* Right Column: Feature Preview Card (307px width x 462.2px height matching devtools spec) */}
           <motion.div
             variants={itemVariants}
-            className="w-full lg:w-[307px] flex flex-col flex-shrink-0 pt-2"
+            className="w-full lg:w-[307px] min-h-[462.2px] flex flex-col flex-shrink-0 pt-0 min-w-0"
           >
             {/* Image Preview: 307x263 matching devtools spec */}
-            <div className="w-full lg:w-[307px] h-[263px] rounded-[16px] overflow-hidden bg-[#1a1a1a]">
+            <div className="w-full lg:w-[307px] h-[263px] rounded-[16px] overflow-hidden bg-[#1a1a1a] flex-shrink-0">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={activeService.id}
@@ -161,8 +161,8 @@ const ServicesSection = () => {
               </AnimatePresence>
             </div>
 
-            {/* Category Tag below Image */}
-            <div className="mt-4">
+            {/* Category Tag below Image with exact 63.2px gap from DevTools spec */}
+            <div className="mt-[63.2px]">
               <span
                 style={{
                   fontFamily: "'Inter', sans-serif",
