@@ -101,7 +101,7 @@ const ServicesSection = () => {
                   key={service.id}
                   onClick={() => setActiveIndex(index)}
                   onMouseEnter={() => setActiveIndex(index)}
-                  className="group cursor-pointer border-b border-[#666161]/30 py-5 lg:py-6 first:pt-0 transition-colors duration-300 select-none"
+                  className="group cursor-pointer border-b border-[#666161]/30 py-6 lg:py-[28px] transition-colors duration-300 select-none flex items-center justify-between min-h-[137.5px]"
                 >
                   <div className="flex items-baseline gap-3">
                     {/* Service Title */}
