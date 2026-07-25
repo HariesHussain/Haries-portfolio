@@ -40,8 +40,13 @@ const ProjectsSection = () => {
   return (
     <section
       id="work"
-      className="w-full bg-[#f5f5f5] lg:bg-white relative z-20"
-      style={{ paddingTop: "90px", paddingBottom: "120px" }}
+      className="w-full bg-[#f5f5f5] lg:bg-white relative z-20 flex justify-center min-w-0"
+      style={{
+        paddingTop: "130px",
+        paddingBottom: "156px",
+        paddingLeft: "30px",
+        paddingRight: "30px",
+      }}
     >
       <Container>
         {/* Project Section Header — Matching div.framer-5rv09a (1200x187) */}

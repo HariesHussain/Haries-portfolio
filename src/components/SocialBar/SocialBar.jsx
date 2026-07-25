@@ -4,7 +4,7 @@ import Container from "../layout/Container";
 
 const SocialBar = () => {
   return (
-    <div className="w-full bg-[#f5f5f5] lg:bg-white border-y border-[#666161]/15 h-[56px] flex items-center select-none z-30 relative">
+    <div className="w-full bg-[#f5f5f5] lg:bg-white border-y border-[#666161]/15 h-[56px] flex items-center justify-center select-none z-30 relative px-[30px]">
       <Container className="flex items-center justify-between text-[14px] font-medium text-[#0a0a0a] tracking-tight">
         
         {/* Available For Work Status */}

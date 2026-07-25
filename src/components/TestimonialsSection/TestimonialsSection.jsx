@@ -4,10 +4,12 @@ const TestimonialsSection = () => {
   return (
     <section
       id="testimonials"
-      className="w-full bg-[#F5F5F5] relative z-20"
+      className="w-full bg-[#F5F5F5] relative z-20 flex justify-center min-w-0"
       style={{
         paddingTop: "130px",
         paddingBottom: "156px",
+        paddingLeft: "30px",
+        paddingRight: "30px",
       }}
     >
       <Container>
