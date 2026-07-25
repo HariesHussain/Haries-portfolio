@@ -161,41 +161,45 @@ const ServicesSection = () => {
               </AnimatePresence>
             </div>
 
-            {/* Category Tag below Image with exact 63.2px gap from DevTools spec */}
-            <div className="mt-[63.2px]">
-              <span
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: "14px",
-                  fontWeight: 400,
-                  color: "#8E8E93",
-                }}
-              >
-                {activeService.label}
-              </span>
-            </div>
-
-            {/* Paragraph Text: 307x136, 20px Inter, #FFFFFF matching devtools spec */}
-            <div className="mt-2 w-[307px] max-w-full min-h-[136px]">
-              <AnimatePresence mode="wait">
-                <motion.p
-                  key={activeService.id}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.3 }}
+            {/* Text Container: 307x171.2 matching div.framer-16czr8j with 28px top gap */}
+            <div className="mt-[28px] w-[307px] max-w-full min-h-[171.2px] flex flex-col">
+              {/* Category Tag: p.framer-text (307x27.2, 16px Inter, #666161) */}
+              <div className="min-h-[27.2px] flex items-center">
+                <span
                   style={{
                     fontFamily: "'Inter', sans-serif",
-                    fontSize: "20px",
+                    fontSize: "16px",
                     fontWeight: 400,
-                    lineHeight: 1.45,
-                    color: "#FFFFFF",
+                    color: "#666161",
                     margin: 0,
                   }}
                 >
-                  {activeService.description}
-                </motion.p>
-              </AnimatePresence>
+                  {activeService.label}
+                </span>
+              </div>
+
+              {/* Paragraph Text: 307x136, 20px Inter, #FFFFFF with 8px top gap */}
+              <div className="mt-[8px] w-[307px] max-w-full min-h-[136px]">
+                <AnimatePresence mode="wait">
+                  <motion.p
+                    key={activeService.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: "20px",
+                      fontWeight: 400,
+                      lineHeight: 1.45,
+                      color: "#FFFFFF",
+                      margin: 0,
+                    }}
+                  >
+                    {activeService.description}
+                  </motion.p>
+                </AnimatePresence>
+              </div>
             </div>
           </motion.div>
         </motion.div>
