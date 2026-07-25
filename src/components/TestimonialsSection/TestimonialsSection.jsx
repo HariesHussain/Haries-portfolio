@@ -1,6 +1,29 @@
 import { motion } from "framer-motion";
 import Container from "../layout/Container";
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.18,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 45 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+};
+
 const TestimonialsSection = () => {
   return (
     <section
@@ -14,16 +37,17 @@ const TestimonialsSection = () => {
       }}
     >
       <Container>
-        {/* Scroll Reveal Container */}
+        {/* Staggered Scroll Reveal Container for all inner divs */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="w-full flex flex-col lg:min-h-[712px]"
         >
           {/* Header Container: 1200x187 matching div.framer-suj1lv */}
-          <div
+          <motion.div
+            variants={itemVariants}
             className="w-full flex items-start"
             style={{
               minHeight: "187px",
@@ -47,22 +71,28 @@ const TestimonialsSection = () => {
                 Inspire us
               </span>
             </h2>
-          </div>
+          </motion.div>
 
           {/* Image & Quote Row: 1200x445 matching div.framer-1as142a */}
           <div className="w-full flex flex-col lg:flex-row items-start lg:gap-[108px] h-auto lg:h-[445px]">
             {/* Left Column Image: 392x445 matching img devtools spec */}
-            <div className="w-full lg:w-[392px] h-[350px] sm:h-[400px] lg:h-[445px] flex-shrink-0 rounded-[16px] overflow-hidden mb-8 lg:mb-0">
+            <motion.div
+              variants={itemVariants}
+              className="w-full lg:w-[392px] h-[350px] sm:h-[400px] lg:h-[445px] flex-shrink-0 rounded-[16px] overflow-hidden mb-8 lg:mb-0"
+            >
               <img
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
                 alt="Ralph Edwards portrait"
                 className="w-full h-full object-cover rounded-[16px]"
                 loading="lazy"
               />
-            </div>
+            </motion.div>
 
             {/* Right Column Content: 700px width, 343.39px height matching div.framer-hqsl70 */}
-            <div className="w-full lg:w-[700px] min-h-[343.39px] flex flex-col justify-between pt-1 min-w-0">
+            <motion.div
+              variants={itemVariants}
+              className="w-full lg:w-[700px] min-h-[343.39px] flex flex-col justify-between pt-1 min-w-0"
+            >
               {/* Quote Heading: 36px Inter #0A0A0A matching h4.framer-text */}
               <h3
                 style={{
@@ -108,7 +138,7 @@ const TestimonialsSection = () => {
                   Project manager and founder
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </Container>

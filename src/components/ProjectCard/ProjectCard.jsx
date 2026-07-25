@@ -36,9 +36,18 @@ const ProjectCard = ({ project }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  // Smooth springs for tracking cursor positioning
-  const springX = useSpring(mouseX, { stiffness: 120, damping: 15 });
-  const springY = useSpring(mouseY, { stiffness: 120, damping: 15 });
+  // Smooth springs for tracking cursor positioning without origin jump
+  const springX = useSpring(mouseX, { stiffness: 200, damping: 24, mass: 0.2 });
+  const springY = useSpring(mouseY, { stiffness: 200, damping: 24, mass: 0.2 });
+
+  const handleMouseEnter = (e) => {
+    if (cardRef.current) {
+      const rect = cardRef.current.getBoundingClientRect();
+      mouseX.set(e.clientX - rect.left);
+      mouseY.set(e.clientY - rect.top);
+    }
+    setIsHovered(true);
+  };
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
@@ -51,7 +60,7 @@ const ProjectCard = ({ project }) => {
     <motion.div
       ref={cardRef}
       className="group relative overflow-hidden rounded-[16px] bg-[#f5f5f5] select-none cursor-pointer w-full h-full"
-      onMouseEnter={() => setIsHovered(true)}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setIsHovered(false)}
       onMouseMove={handleMouseMove}
     >
