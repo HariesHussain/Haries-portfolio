@@ -13,6 +13,7 @@
 import { motion } from "framer-motion";
 import { navbarEntrance } from "@/animations/variants";
 import logoImage from "@/assets/images/hero/logo.png";
+import Container from "@/components/layout/Container";
 
 const Navbar = () => {
   return (
@@ -20,10 +21,10 @@ const Navbar = () => {
       variants={navbarEntrance}
       initial="hidden"
       animate="visible"
-      className="fixed top-0 left-0 right-0 z-50 bg-paper"
+      className="fixed top-0 left-0 right-0 z-50 bg-[#f5f5f5]"
     >
-      <div className="mx-auto w-full max-w-content px-[clamp(16px,4vw,60px)]">
-        <div className="flex items-center justify-between py-[clamp(14px,2vw,22px)]">
+      <Container>
+        <div className="flex items-center justify-between py-4 md:py-5">
           {/* Logo */}
           <a
             href="/"
@@ -31,28 +32,28 @@ const Navbar = () => {
           >
             <img 
               src={logoImage} 
-              alt="Haries Logo" 
+              alt="HARIES Logo" 
               className="h-[clamp(40px,6vw,72px)] w-auto" 
             />
           </a>
 
           {/* Desktop/Tablet Navigation Links */}
-          <div className="hidden md:flex items-center gap-[clamp(60px,8vw,110px)] text-[clamp(13px,2vw,15px)] font-medium text-ink tracking-tight">
+          <div className="hidden md:flex items-center gap-12 lg:gap-16 text-[15px] font-medium text-[#0a0a0a]">
             <a
               href="#about"
-              className="hover:text-accent transition-colors duration-400"
+              className="hover:text-accent transition-colors duration-300"
             >
               About
             </a>
             <a
               href="#works"
-              className="hover:text-accent transition-colors duration-400"
+              className="hover:text-accent transition-colors duration-300"
             >
               Works
             </a>
             <a
               href="#contact"
-              className="hover:text-accent transition-colors duration-400"
+              className="hover:text-accent transition-colors duration-300"
             >
               Contact
             </a>
@@ -60,17 +61,15 @@ const Navbar = () => {
 
           {/* Hamburger Menu Button */}
           <button
-            className="relative flex items-center justify-center w-[clamp(42px,7vw,66px)] h-[clamp(30px,5vw,42px)] bg-ink rounded-[clamp(6px,1vw,10px)] flex-shrink-0 ml-[clamp(30px,5vw,60px)]"
+            className="flex flex-col items-center justify-center gap-[5px] w-[56px] h-[40px] bg-[#0a0a0a] rounded-[10px] flex-shrink-0 transition-opacity hover:opacity-90"
             aria-label="Open menu"
           >
-            <div className="flex flex-col items-center justify-center gap-[clamp(3px,0.5vw,5px)]">
-              <span className="block w-[clamp(14px,2.5vw,20px)] h-[1.5px] bg-white rounded-full" />
-              <span className="block w-[clamp(14px,2.5vw,20px)] h-[1.5px] bg-white rounded-full" />
-              <span className="block w-[clamp(14px,2.5vw,20px)] h-[1.5px] bg-white rounded-full" />
-            </div>
+            <span className="w-5 h-[1.8px] bg-white rounded-full block" />
+            <span className="w-5 h-[1.8px] bg-white rounded-full block" />
+            <span className="w-5 h-[1.8px] bg-white rounded-full block" />
           </button>
         </div>
-      </div>
+      </Container>
     </motion.nav>
   );
 };

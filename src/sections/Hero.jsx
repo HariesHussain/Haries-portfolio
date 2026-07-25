@@ -143,7 +143,7 @@ const Hero = () => {
         initial="hidden"
         animate="visible"
       >
-        <div className="relative mx-auto w-full max-w-content px-5 md:px-[30px] h-full">
+        <div className="relative mx-auto w-full max-w-[1200px] px-5 md:px-[30px] h-full">
           {/* Tagline — top-left, below navbar area */}
           <motion.p
             variants={textChildVariants}

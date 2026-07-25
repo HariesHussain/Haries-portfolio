@@ -38,50 +38,52 @@ const PROJECTS_DATA = [
 
 const ProjectsSection = () => {
   return (
-    <section className="w-full bg-white relative z-20" style={{ paddingTop: '130px', paddingBottom: 'clamp(80px, 10vw, 156px)' }}>
+    <section
+      id="work"
+      className="w-full bg-[#f5f5f5] lg:bg-white relative z-20"
+      style={{ paddingTop: "90px", paddingBottom: "120px" }}
+    >
       <Container>
-        {/* Project Section Header — CSS Grid: 65% / 35% */}
-        <div className="grid grid-cols-1 lg:grid-cols-[65%_35%] gap-8 mb-[110px]">
+        {/* Project Section Header — Matching div.framer-5rv09a (1200x187) */}
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 mb-12 md:mb-16 min-h-[187px]">
           {/* Left Column: Heading */}
           <div>
             <h2
               style={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: 'clamp(68px, 6vw, 78px)',
+                fontSize: "clamp(48px, 6vw, 76px)",
                 fontWeight: 700,
-                lineHeight: 0.92,
-                letterSpacing: '-0.04em',
-                color: '#1A1A1A',
+                lineHeight: 0.95,
+                letterSpacing: "-0.035em",
+                color: "#0A0A0A",
                 margin: 0,
               }}
             >
-              Projects we're<br />
-              <span style={{ fontWeight: 300, color: '#666161' }}>proud of</span>
+              Projects we're
+              <br />
+              <span style={{ fontWeight: 400, color: "#666161" }}>
+                proud of
+              </span>
             </h2>
           </div>
 
-          {/* Right Column: Paragraph — aligned to upper right corner */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'flex-start',
-              justifyContent: 'flex-end',
-              paddingTop: '8px',
-            }}
-          >
+          {/* Right Column: Paragraph matching p.framer-text (298x102, 20px Inter, #666161) */}
+          <div className="flex justify-start md:justify-end pt-2">
             <p
               style={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: '20px',
+                fontSize: "20px",
                 fontWeight: 400,
-                lineHeight: 1.55,
-                letterSpacing: '-0.01em',
-                color: '#666161',
+                lineHeight: 1.45,
+                letterSpacing: "-0.01em",
+                color: "#666161",
                 margin: 0,
-                maxWidth: '300px',
+                width: "298px",
+                maxWidth: "100%",
               }}
             >
-              A curated collection of projects that showcase my approach to design blending creativity.
+              A curated collection of projects that showcase my approach to
+              design blending creativity.
             </p>
           </div>
         </div>

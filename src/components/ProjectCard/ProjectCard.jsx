@@ -29,7 +29,7 @@ const renderLogo = (type) => {
   return null;
 };
 
-const ProjectCard = ({ project, isLarge }) => {
+const ProjectCard = ({ project }) => {
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef(null);
 
@@ -47,19 +47,17 @@ const ProjectCard = ({ project, isLarge }) => {
     mouseY.set(e.clientY - rect.top);
   };
 
-
-
   return (
     <motion.div
       ref={cardRef}
-      className="group relative overflow-hidden rounded-[20px] bg-paper select-none cursor-pointer w-full h-full"
+      className="group relative overflow-hidden rounded-[16px] bg-[#f5f5f5] select-none cursor-pointer w-full h-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onMouseMove={handleMouseMove}
     >
       {/* 1. Project Image (Zoom, Blur, and Darken on Hover) */}
       <motion.div
-        className="absolute inset-0 w-full h-full overflow-hidden rounded-[20px] z-0"
+        className="absolute inset-0 w-full h-full overflow-hidden rounded-[16px] z-0"
         animate={{
           scale: isHovered ? 1.05 : 1.0,
           filter: isHovered ? "blur(3px) brightness(0.7)" : "blur(0px) brightness(1.0)",
@@ -72,7 +70,7 @@ const ProjectCard = ({ project, isLarge }) => {
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover rounded-[20px] pointer-events-none"
+          className="w-full h-full object-cover rounded-[16px] pointer-events-none"
           loading="lazy"
         />
       </motion.div>
@@ -105,7 +103,7 @@ const ProjectCard = ({ project, isLarge }) => {
         {/* Center: Large Project Title + Logo */}
         <div className="flex-grow flex items-center justify-center">
           <motion.h3
-            className="text-white font-semibold tracking-tight text-center select-none flex items-center justify-center"
+            className="text-white font-semibold tracking-tight text-center select-none flex items-center justify-center gap-3"
             style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: "clamp(24px, 3.5vw, 36px)",
@@ -124,7 +122,7 @@ const ProjectCard = ({ project, isLarge }) => {
           </motion.h3>
         </div>
 
-        {/* Bottom space remains empty as per reference layout */}
+        {/* Bottom space */}
         <div className="h-[20px]" />
       </div>
     </motion.div>
