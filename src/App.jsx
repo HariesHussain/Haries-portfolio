@@ -5,6 +5,7 @@ import Hero from "@/sections/Hero";
 import SocialBar from "@/components/SocialBar/SocialBar";
 import ProjectsSection from "@/components/ProjectsSection/ProjectsSection";
 import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSection";
+import ServicesSection from "@/components/ServicesSection/ServicesSection";
 
 function App() {
   const { scrollY } = useScroll();
@@ -41,6 +42,7 @@ function App() {
           <SocialBar />
           <ProjectsSection />
           <TestimonialsSection />
+          <ServicesSection />
         </motion.div>
       </main>
     </>
