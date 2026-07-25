@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Hero from "@/sections/Hero";
 import SocialBar from "@/components/SocialBar/SocialBar";
 import ProjectsSection from "@/components/ProjectsSection/ProjectsSection";
+import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSection";
 
 function App() {
   const { scrollY } = useScroll();
@@ -39,6 +40,7 @@ function App() {
         >
           <SocialBar />
           <ProjectsSection />
+          <TestimonialsSection />
         </motion.div>
       </main>
     </>
