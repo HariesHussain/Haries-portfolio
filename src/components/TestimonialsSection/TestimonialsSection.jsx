@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Container from "../layout/Container";
 
 const TestimonialsSection = () => {
@@ -6,15 +7,21 @@ const TestimonialsSection = () => {
       id="testimonials"
       className="w-full bg-[#F5F5F5] relative z-20 flex justify-center min-w-0"
       style={{
-        paddingTop: "130px",
+        paddingTop: "0px",
         paddingBottom: "156px",
         paddingLeft: "30px",
         paddingRight: "30px",
       }}
     >
       <Container>
-        {/* Main Container: 1200x712 matching div.framer-xomfmy */}
-        <div className="w-full flex flex-col lg:min-h-[712px]">
+        {/* Scroll Reveal Container */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          className="w-full flex flex-col lg:min-h-[712px]"
+        >
           {/* Header Container: 1200x187 matching div.framer-suj1lv */}
           <div className="w-full min-h-[187px] mb-10 lg:mb-[80px]">
             <h2
@@ -97,7 +104,7 @@ const TestimonialsSection = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );
