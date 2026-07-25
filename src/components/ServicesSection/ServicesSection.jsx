@@ -89,10 +89,15 @@ const ServicesSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
-          className="w-full flex flex-col lg:flex-row justify-between items-start lg:gap-[238px] min-h-[550.21px]"
+          className="w-full flex flex-col lg:flex-row justify-between items-start"
+          style={{ gap: "238px", minHeight: "550.21px" }}
         >
-          {/* Left Column: Interactive Services Accordion (w-full lg:w-[655px]) */}
-          <motion.div variants={itemVariants} className="w-full lg:w-[655px] min-h-[550.21px] flex flex-col justify-between">
+          {/* Left Column: Interactive Services Accordion (655px width matching devtools spec) */}
+          <motion.div
+            variants={itemVariants}
+            className="w-full flex flex-col justify-between"
+            style={{ width: "655px", maxWidth: "100%", minHeight: "550.21px" }}
+          >
             {SERVICES_DATA.map((service, index) => {
               const isActive = index === activeIndex;
 
@@ -101,7 +106,13 @@ const ServicesSection = () => {
                   key={service.id}
                   onClick={() => setActiveIndex(index)}
                   onMouseEnter={() => setActiveIndex(index)}
-                  className="group cursor-pointer border-b border-[#666161]/30 py-6 lg:py-[28px] transition-colors duration-300 select-none flex items-center justify-between min-h-[137.5px]"
+                  className="group cursor-pointer border-b border-[#666161]/30 transition-colors duration-300 select-none flex items-center justify-between"
+                  style={{
+                    paddingTop: "28px",
+                    paddingBottom: "28px",
+                    minHeight: "137.5px",
+                    boxSizing: "border-box",
+                  }}
                 >
                   <div className="flex items-baseline gap-3">
                     {/* Service Title */}
@@ -143,10 +154,14 @@ const ServicesSection = () => {
           {/* Right Column: Feature Preview Card (307px width x 462.2px height matching devtools spec) */}
           <motion.div
             variants={itemVariants}
-            className="w-full lg:w-[307px] min-h-[462.2px] flex flex-col flex-shrink-0 pt-0 min-w-0"
+            className="w-full flex flex-col flex-shrink-0 min-w-0"
+            style={{ width: "307px", maxWidth: "100%", minHeight: "462.2px" }}
           >
             {/* Image Preview: 307x263 matching devtools spec */}
-            <div className="w-full lg:w-[307px] h-[263px] rounded-[16px] overflow-hidden bg-[#1a1a1a] flex-shrink-0">
+            <div
+              className="rounded-[16px] overflow-hidden bg-[#1a1a1a] flex-shrink-0"
+              style={{ width: "307px", maxWidth: "100%", height: "263px" }}
+            >
               <AnimatePresence mode="wait">
                 <motion.img
                   key={activeService.id}
@@ -161,10 +176,19 @@ const ServicesSection = () => {
               </AnimatePresence>
             </div>
 
-            {/* Text Container: 307x171.2 matching div.framer-16czr8j with 28px top gap */}
-            <div className="mt-[28px] w-[307px] max-w-full min-h-[171.2px] flex flex-col">
+            {/* Text Container: 307x171.2 matching div.framer-16czr8j with exact 28px top gap */}
+            <div
+              style={{
+                marginTop: "28px",
+                width: "307px",
+                maxWidth: "100%",
+                minHeight: "171.2px",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
               {/* Category Tag: p.framer-text (307x27.2, 16px Inter, #666161) */}
-              <div className="min-h-[27.2px] flex items-center">
+              <div style={{ minHeight: "27.2px", display: "flex", alignItems: "center" }}>
                 <span
                   style={{
                     fontFamily: "'Inter', sans-serif",
@@ -178,8 +202,8 @@ const ServicesSection = () => {
                 </span>
               </div>
 
-              {/* Paragraph Text: 307x136, 20px Inter, #FFFFFF with 8px top gap */}
-              <div className="mt-[8px] w-[307px] max-w-full min-h-[136px]">
+              {/* Paragraph Text: 307x136, 20px Inter, #FFFFFF with exact 8px top gap */}
+              <div style={{ marginTop: "8px", width: "307px", maxWidth: "100%", minHeight: "136px" }}>
                 <AnimatePresence mode="wait">
                   <motion.p
                     key={activeService.id}
