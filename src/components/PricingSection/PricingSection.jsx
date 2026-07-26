@@ -174,9 +174,9 @@ const PricingSection = () => {
                   For small business or startups building their first digital presence.
                 </p>
 
-                {/* CTA Button: Light neutral white pill (480x55.2, 14px 22px padding) standing out cleanly against #F5F5F5 card */}
+                {/* CTA Button: Light neutral white pill (480x55.2, 14px 22px padding) transitioning to #F9452D on hover */}
                 <button
-                  className="w-full max-w-[480px] bg-white text-[#0A0A0A] border border-[#E0E0E0] shadow-sm rounded-full font-medium text-[16px] transition-all hover:bg-[#F9F9F9] flex items-center justify-center"
+                  className="w-full max-w-[480px] bg-white text-[#0A0A0A] border border-[#E0E0E0] shadow-sm rounded-full font-medium text-[16px] transition-all duration-300 hover:bg-[#F9452D] hover:text-white hover:border-[#F9452D] flex items-center justify-center"
                   style={{
                     fontFamily: "'Inter', sans-serif",
                     padding: "14px 22px",
@@ -283,13 +283,11 @@ const PricingSection = () => {
                   For established brands looking for a fully tailored experience.
                 </p>
 
-                {/* CTA Button: Solid Black background #0A0A0A with 14px 22px padding matching Screenshot 1 */}
+                {/* CTA Button: Solid Black background #0A0A0A with 14px 22px padding transitioning to #F9452D on hover */}
                 <button
-                  className="w-full max-w-[480px] rounded-full font-medium text-[16px] transition-opacity hover:opacity-90 flex items-center justify-center"
+                  className="w-full max-w-[480px] bg-[#0A0A0A] text-white rounded-full font-medium text-[16px] transition-all duration-300 hover:bg-[#F9452D] hover:text-white flex items-center justify-center"
                   style={{
                     fontFamily: "'Inter', sans-serif",
-                    backgroundColor: "#0A0A0A",
-                    color: "#FFFFFF",
                     padding: "14px 22px",
                     minHeight: "55.2px",
                     marginBottom: "40px",
