@@ -16,13 +16,16 @@ const Footer = () => {
       >
         <Container>
           <div className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 lg:gap-16">
-            {/* Left Side: hi.png Footer Logo Image */}
+            {/* Left Side: hi.png Footer Logo Image (496.99 x 214.99 px matching DevTools spec) */}
             <div className="flex items-center">
               <a href="/" className="flex items-center">
                 <img
                   src={hiImage}
                   alt="HARIES Logo"
-                  className="h-[clamp(70px,11vw,140px)] w-auto object-contain"
+                  className="w-[496.99px] max-w-full h-auto object-contain"
+                  style={{
+                    maxHeight: "214.99px",
+                  }}
                 />
               </a>
             </div>
