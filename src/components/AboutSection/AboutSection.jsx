@@ -26,11 +26,12 @@ const itemVariants = {
 };
 
 const AboutSection = () => {
-  const sectionRef = useRef(null);
+  const imageRef = useRef(null);
 
   // Smooth scroll-driven zoom out from 688.8x534.79 (1.4 scale) down to 492x381.99 (1.0 scale)
+  // Target imageRef directly so scale transition occurs precisely while image is in view
   const { scrollYProgress } = useScroll({
-    target: sectionRef,
+    target: imageRef,
     offset: ["start end", "center center"],
   });
 
@@ -38,7 +39,6 @@ const AboutSection = () => {
 
   return (
     <section
-      ref={sectionRef}
       id="about"
       className="w-full bg-[#F5F5F5] relative z-20 flex justify-center min-w-0"
       style={{
@@ -115,6 +115,7 @@ const AboutSection = () => {
           >
             {/* Left Column: Image Box (492x381.99 px) with Scroll-Driven Zoom Out from 688.8x534.79 (1.4 scale) */}
             <motion.div
+              ref={imageRef}
               variants={itemVariants}
               className="rounded-[16px] overflow-hidden flex-shrink-0 bg-[#e5e5e5]"
               style={{

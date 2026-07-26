@@ -26,20 +26,19 @@ const itemVariants = {
 };
 
 const TestimonialsSection = () => {
-  const sectionRef = useRef(null);
+  const imageRef = useRef(null);
 
-  // Smooth scroll-driven zoom effect for the portrait image
+  // Smooth scroll-driven zoom effect for the portrait image (1.4 scale to 1.0 scale)
   const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
+    target: imageRef,
+    offset: ["start end", "center center"],
   });
 
-  // Scales down from 1.4 (zoomed in) to 1.0 (normal) as section centers in view
+  // Scales down from 1.4 (zoomed in) to 1.0 (normal) as image centers in view
   const imageScale = useTransform(scrollYProgress, [0, 1], [1.4, 1.0]);
 
   return (
     <section
-      ref={sectionRef}
       id="testimonials"
       className="w-full bg-[#F5F5F5] relative z-20 flex justify-center min-w-0"
       style={{
@@ -90,6 +89,7 @@ const TestimonialsSection = () => {
           <div className="w-full flex flex-col lg:flex-row items-start lg:gap-[108px] h-auto lg:h-[445px]">
             {/* Left Column Image: 392x445 matching img devtools spec */}
             <motion.div
+              ref={imageRef}
               variants={itemVariants}
               className="w-full lg:w-[392px] h-[350px] sm:h-[400px] lg:h-[445px] flex-shrink-0 rounded-[16px] overflow-hidden mb-8 lg:mb-0"
             >
