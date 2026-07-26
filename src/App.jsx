@@ -41,10 +41,10 @@ function App() {
           className="relative z-10 bg-white"
         >
           <SocialBar />
-          <AboutSection />
           <ProjectsSection />
           <TestimonialsSection />
           <ServicesSection />
+          <AboutSection />
         </motion.div>
       </main>
     </>
