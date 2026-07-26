@@ -285,9 +285,11 @@ const PricingSection = () => {
 
                 {/* CTA Button: Solid Black background #0A0A0A with 14px 22px padding matching Screenshot 1 */}
                 <button
-                  className="w-full max-w-[480px] bg-[#0A0A0A] text-white rounded-full font-medium text-[16px] transition-opacity hover:opacity-90 flex items-center justify-center"
+                  className="w-full max-w-[480px] rounded-full font-medium text-[16px] transition-opacity hover:opacity-90 flex items-center justify-center"
                   style={{
                     fontFamily: "'Inter', sans-serif",
+                    backgroundColor: "#0A0A0A",
+                    color: "#FFFFFF",
                     padding: "14px 22px",
                     minHeight: "55.2px",
                     marginBottom: "40px",
