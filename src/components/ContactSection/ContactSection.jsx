@@ -50,7 +50,7 @@ const ContactSection = () => {
         paddingRight: "30px",
       }}
     >
-      {/* Crisp, Sharp Background Model Image with Scroll Zoom Animation */}
+      {/* Background Model Image with Scroll Zoom Animation and Dark Backdrop Tint */}
       <motion.div
         className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none"
         style={{ scale: imageScale }}
@@ -58,21 +58,20 @@ const ContactSection = () => {
         <img
           src={heroImg}
           alt="Contact Section Background"
-          className="w-full h-full object-cover object-[center_20%] opacity-100"
+          className="w-full h-full object-cover object-[center_20%] opacity-50"
           loading="lazy"
         />
-        {/* Subtle right-side dark gradient overlay to ensure 100% white text contrast on the right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/70 pointer-events-none" />
       </motion.div>
 
-      <Container className="relative z-10">
+      <Container className="relative z-30">
         {/* Main Grid: Total Width 1200px x 567.49px matching div.framer-17tmo6c in Screenshot 5 */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
-          className="w-full flex flex-col lg:flex-row justify-between items-center lg:items-start min-h-[567.49px] gap-8 lg:gap-12"
+          className="w-full flex flex-col lg:flex-row justify-between items-center lg:items-start min-h-[567.49px] gap-8 lg:gap-12 relative z-30"
         >
           {/* Left Column: Form Card Container (511.99 x 567.49 px with 48px 40px padding matching div.framer-av919) */}
           <motion.div
