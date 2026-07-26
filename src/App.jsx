@@ -59,7 +59,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <main className="relative">
+      <main className="relative" style={{ paddingBottom: `${maxTranslation}px` }}>
         <Hero />
         <motion.div 
           style={{ y: whiteSectionY, willChange: "transform", transform: "translateZ(0)" }} 
