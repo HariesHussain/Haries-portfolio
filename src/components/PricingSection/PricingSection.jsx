@@ -174,11 +174,9 @@ const PricingSection = () => {
                   For small business or startups building their first digital presence.
                 </p>
 
-                {/* CTA Button: Light neutral white pill (480x55.2, 14px 22px padding) - Black text by default, turns #F9452D Orange on hover */}
-                <motion.button
-                  whileHover={{ backgroundColor: "#F9452D", color: "#FFFFFF", borderColor: "#F9452D" }}
-                  transition={{ duration: 0.25 }}
-                  className="w-full max-w-[480px] bg-white text-[#0A0A0A] border border-[#E0E0E0] shadow-sm rounded-full font-medium text-[16px] flex items-center justify-center cursor-pointer"
+                {/* CTA Button: Standard white button for Basic Plan */}
+                <button
+                  className="w-full max-w-[480px] bg-white text-[#0A0A0A] border border-[#E0E0E0] shadow-sm rounded-full font-medium text-[16px] transition-opacity hover:opacity-90 flex items-center justify-center cursor-pointer"
                   style={{
                     fontFamily: "'Inter', sans-serif",
                     padding: "14px 22px",
@@ -187,7 +185,7 @@ const PricingSection = () => {
                   }}
                 >
                   Get in touch
-                </motion.button>
+                </button>
 
                 {/* Feature Bullet Points matching Screenshot 2 */}
                 <div className="flex flex-col gap-4">
