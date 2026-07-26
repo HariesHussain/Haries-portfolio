@@ -9,6 +9,7 @@ import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSe
 import ServicesSection from "@/components/ServicesSection/ServicesSection";
 import StatsSection from "@/components/StatsSection/StatsSection";
 import PricingSection from "@/components/PricingSection/PricingSection";
+import ContactSection from "@/components/ContactSection/ContactSection";
 
 function App() {
   const { scrollY } = useScroll();
@@ -49,6 +50,7 @@ function App() {
           <AboutSection />
           <StatsSection />
           <PricingSection />
+          <ContactSection />
         </motion.div>
       </main>
     </>
