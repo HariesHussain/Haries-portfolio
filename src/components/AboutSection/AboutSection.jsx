@@ -54,12 +54,20 @@ const AboutSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
-          className="w-full flex flex-col min-h-[980px]"
+          className="w-full flex flex-col min-h-[659px]"
         >
-          {/* Header Block: Category Tag + Heading Paragraph */}
-          <motion.div variants={itemVariants} className="w-full mb-16 lg:mb-24">
+          {/* Top Header Block: 1200x160.01 matching div.framer-oyabvb */}
+          <motion.div
+            variants={itemVariants}
+            className="w-full flex flex-col justify-between"
+            style={{
+              width: "1200px",
+              maxWidth: "100%",
+              minHeight: "160.01px",
+            }}
+          >
             {/* Category Badge: + About us (16px Inter, #0A0A0A) */}
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-2">
               <span className="w-5 h-5 rounded-full border border-[#0A0A0A] flex items-center justify-center text-[13px] font-bold text-[#0A0A0A] leading-none">
                 +
               </span>
@@ -80,21 +88,31 @@ const AboutSection = () => {
             <h2
               style={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: "clamp(20px, 2.5vw, 24px)",
+                fontSize: "24px",
                 fontWeight: 500,
                 lineHeight: 1.45,
                 color: "#0A0A0A",
                 margin: 0,
                 width: "420px",
                 maxWidth: "100%",
+                minHeight: "100.81px",
               }}
             >
               A creative agency is a company that provides specialized services to help businesses build and promote.
             </h2>
           </motion.div>
 
-          {/* Media & Content Row: Image (492x381.99) + Paragraph Block */}
-          <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
+          {/* Lower Media Container: 1200x381.99 with exact 117px top margin matching div.framer-1jxjg6e */}
+          <div
+            className="w-full flex flex-col lg:flex-row items-center justify-start"
+            style={{
+              marginTop: "117px",
+              width: "1200px",
+              maxWidth: "100%",
+              minHeight: "381.99px",
+              gap: "64px",
+            }}
+          >
             {/* Left Column: Image Box (492x381.99 px) with Scroll-Driven Zoom Out from 688.8x534.79 (1.4 scale) */}
             <motion.div
               variants={itemVariants}
@@ -114,15 +132,20 @@ const AboutSection = () => {
               />
             </motion.div>
 
-            {/* Right Column: Paragraph Text */}
+            {/* Right Column: Paragraph Text (245x81.59, 16px Inter, #0A0A0A) matching p.framer-text */}
             <motion.div
               variants={itemVariants}
-              className="w-full lg:w-[480px] flex flex-col justify-center min-w-0"
+              className="flex flex-col justify-center min-w-0"
+              style={{
+                width: "245px",
+                maxWidth: "100%",
+                minHeight: "81.59px",
+              }}
             >
               <p
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: "clamp(18px, 2.2vw, 22px)",
+                  fontSize: "16px",
                   fontWeight: 400,
                   lineHeight: 1.45,
                   color: "#0A0A0A",
