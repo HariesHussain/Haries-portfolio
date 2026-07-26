@@ -174,25 +174,26 @@ const PricingSection = () => {
                   For small business or startups building their first digital presence.
                 </p>
 
-                {/* CTA Button: White background 480x55.2 with 14px 22px padding matching Screenshot 4 */}
+                {/* CTA Button: Light neutral white pill (480x55.2, 14px 22px padding) standing out cleanly against #F5F5F5 card */}
                 <button
-                  className="w-full max-w-[480px] bg-white text-[#0A0A0A] rounded-full font-medium text-[16px] transition-opacity hover:opacity-90 mb-10 flex items-center justify-center"
+                  className="w-full max-w-[480px] bg-white text-[#0A0A0A] border border-[#E0E0E0] shadow-sm rounded-full font-medium text-[16px] transition-all hover:bg-[#F9F9F9] flex items-center justify-center"
                   style={{
                     fontFamily: "'Inter', sans-serif",
                     padding: "14px 22px",
                     minHeight: "55.2px",
+                    marginBottom: "40px",
                   }}
                 >
                   Get in touch
                 </button>
 
-                {/* Feature Bullet Points matching Screenshot 5 */}
+                {/* Feature Bullet Points matching Screenshot 2 */}
                 <div className="flex flex-col gap-4">
                   {[
                     "Competitor analysis",
                     "Design a Home page +10 inner page",
-                    "Basic SEO setup",
-                    "Email support",
+                    "Setup basic contact form",
+                    "Bug fixing & 24/7 Support",
                   ].map((feature, idx) => (
                     <div key={idx} className="flex items-center gap-3">
                       <span className="w-5 h-5 rounded-full border border-[#0A0A0A] flex items-center justify-center text-[12px] font-bold text-[#0A0A0A] flex-shrink-0 leading-none">
@@ -282,19 +283,20 @@ const PricingSection = () => {
                   For established brands looking for a fully tailored experience.
                 </p>
 
-                {/* CTA Button: Black background 480x55.2 with 14px 22px padding matching Screenshot 5 */}
+                {/* CTA Button: Solid Black background #0A0A0A with 14px 22px padding matching Screenshot 1 */}
                 <button
-                  className="w-full max-w-[480px] bg-[#0A0A0A] text-white rounded-full font-medium text-[16px] transition-opacity hover:opacity-90 mb-10 flex items-center justify-center"
+                  className="w-full max-w-[480px] bg-[#0A0A0A] text-white rounded-full font-medium text-[16px] transition-opacity hover:opacity-90 flex items-center justify-center"
                   style={{
                     fontFamily: "'Inter', sans-serif",
                     padding: "14px 22px",
                     minHeight: "55.2px",
+                    marginBottom: "40px",
                   }}
                 >
                   Get in touch
                 </button>
 
-                {/* Feature Bullet Points matching Screenshot 5 */}
+                {/* Feature Bullet Points matching Screenshot 2 */}
                 <div className="flex flex-col gap-4">
                   {[
                     "Custom blog design + setup",
