@@ -35,11 +35,7 @@ const TestimonialsSection = () => {
   });
 
   // Scales down from 1.18 (zoomed in) to 1.0 (normal) as section centers in view, then scales back to 1.18
-  const imageScale = useTransform(
-    scrollYProgress,
-    [0.1, 0.45, 0.85],
-    [1.18, 1.0, 1.18]
-  );
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1.22, 1.0]);
 
   return (
     <section
@@ -102,10 +98,7 @@ const TestimonialsSection = () => {
                 alt="Ralph Edwards portrait"
                 className="w-full h-full object-cover rounded-[16px]"
                 loading="lazy"
-                initial={{ scale: 1.2 }}
-                whileInView={{ scale: 1.0 }}
-                viewport={{ once: false, amount: 0.2 }}
-                transition={{ duration: 1.1, ease: [0.25, 0.1, 0.25, 1] }}
+                style={{ scale: imageScale }}
               />
             </motion.div>
 

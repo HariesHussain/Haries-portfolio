@@ -171,10 +171,10 @@ const ServicesSection = () => {
                   src={activeService.image}
                   alt={activeService.title}
                   className="w-full h-full object-cover rounded-[16px] absolute inset-0"
-                  initial={{ y: "100%", opacity: 0.5 }}
+                  initial={{ y: "100%", opacity: 0.6 }}
                   animate={{ y: "0%", opacity: 1 }}
-                  exit={{ y: "-100%", opacity: 0.5 }}
-                  transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
+                  exit={{ y: "-100%", opacity: 0.6 }}
+                  transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
                 />
               </AnimatePresence>
             </div>
@@ -195,7 +195,7 @@ const ServicesSection = () => {
                   initial={{ y: "100%", opacity: 0 }}
                   animate={{ y: "0%", opacity: 1 }}
                   exit={{ y: "-100%", opacity: 0 }}
-                  transition={{ duration: 0.45, ease: [0.32, 0.72, 0, 1] }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                   className="w-full flex flex-col"
                 >
                   {/* Category Tag */}
