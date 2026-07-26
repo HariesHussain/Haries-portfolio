@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Lenis from "lenis";
+import "lenis/dist/lenis.css";
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/sections/Hero";
 import SocialBar from "@/components/SocialBar/SocialBar";
@@ -17,11 +19,30 @@ function App() {
   const [viewportHeight, setViewportHeight] = useState(800);
 
   useEffect(() => {
+    // Initialize Lenis smooth scroll engine for luxury weighted inertia scrolling
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      wheelMultiplier: 0.9,
+    });
+
+    let animationFrameId;
+    function raf(time) {
+      lenis.raf(time);
+      animationFrameId = requestAnimationFrame(raf);
+    }
+    animationFrameId = requestAnimationFrame(raf);
+
     if (typeof window !== "undefined") {
       setViewportHeight(window.innerHeight);
       const handleResize = () => setViewportHeight(window.innerHeight);
       window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
+      return () => {
+        window.removeEventListener("resize", handleResize);
+        cancelAnimationFrame(animationFrameId);
+        lenis.destroy();
+      };
     }
   }, []);
 
