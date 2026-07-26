@@ -27,6 +27,7 @@ const itemVariants = {
 
 const PricingSection = () => {
   const [billingCycle, setBillingCycle] = useState("per_project"); // "per_project" or "monthly"
+  const [isProHovered, setIsProHovered] = useState(false);
 
   return (
     <section
@@ -284,19 +285,21 @@ const PricingSection = () => {
                 </p>
 
                 {/* CTA Button: Solid Black #0A0A0A by default - Turns #F9452D Orange on hover when cursor is over button */}
-                <motion.button
-                  whileHover={{ backgroundColor: "#F9452D", color: "#FFFFFF" }}
-                  transition={{ duration: 0.25 }}
-                  className="w-full max-w-[480px] bg-[#0A0A0A] text-white rounded-full font-medium text-[16px] flex items-center justify-center cursor-pointer"
+                <button
+                  onMouseEnter={() => setIsProHovered(true)}
+                  onMouseLeave={() => setIsProHovered(false)}
+                  className="w-full max-w-[480px] rounded-full font-medium text-[16px] flex items-center justify-center cursor-pointer transition-colors duration-300"
                   style={{
                     fontFamily: "'Inter', sans-serif",
+                    backgroundColor: isProHovered ? "#F9452D" : "#0A0A0A",
+                    color: "#FFFFFF",
                     padding: "14px 22px",
                     minHeight: "55.2px",
                     marginBottom: "40px",
                   }}
                 >
                   Get in touch
-                </motion.button>
+                </button>
 
                 {/* Feature Bullet Points matching Screenshot 2 */}
                 <div className="flex flex-col gap-4">
