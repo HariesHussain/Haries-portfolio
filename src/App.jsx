@@ -21,10 +21,10 @@ function App() {
   useEffect(() => {
     // Initialize Lenis smooth scroll engine for luxury weighted inertia scrolling
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 1.6,
+      lerp: 0.05,
       smoothWheel: true,
-      wheelMultiplier: 0.9,
+      wheelMultiplier: 0.85,
     });
 
     let animationFrameId;
@@ -62,7 +62,7 @@ function App() {
       <main className="relative">
         <Hero />
         <motion.div 
-          style={{ y: whiteSectionY }} 
+          style={{ y: whiteSectionY, willChange: "transform", transform: "translateZ(0)" }} 
           className="relative z-10 bg-white"
         >
           <SocialBar />

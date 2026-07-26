@@ -97,13 +97,14 @@ const Hero = () => {
     <section
       ref={sectionRef}
       className="sticky top-0 w-full h-screen overflow-hidden bg-paper z-0"
+      style={{ willChange: "transform", transform: "translateZ(0)" }}
     >
       {/* ── Hero Background Image ──
           Always rendered — visibility controlled by the grid mask above.
           No opacity animation needed; the grid cells handle the reveal. */}
       <motion.div
         className="absolute inset-0 z-0"
-        style={{ y: imageY, scale: imageScale }}
+        style={{ y: imageY, scale: imageScale, willChange: "transform", transform: "translateZ(0)" }}
       >
         {heroImage ? (
           <img
