@@ -153,11 +153,17 @@ const ContactSection = () => {
                 />
               </div>
 
-              {/* Submit Button */}
+              {/* Submit Button: 432.01x55.19 with 14px 30px padding matching button.framer-0zlgg in DevTools */}
               <button
                 type="submit"
-                className="w-full bg-[#0A0A0A] text-white py-4 rounded-full font-medium text-[16px] transition-opacity hover:opacity-90 mt-2 cursor-pointer"
-                style={{ fontFamily: "'Inter', sans-serif" }}
+                className="w-full bg-[#0A0A0A] text-white rounded-full font-medium text-[16px] transition-all duration-300 hover:opacity-90 mt-2 cursor-pointer flex items-center justify-center"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  backgroundColor: "#0A0A0A",
+                  color: "#FFFFFF",
+                  padding: "14px 30px",
+                  minHeight: "55.19px",
+                }}
               >
                 Submit
               </button>
@@ -229,24 +235,27 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Social Links Row: Instagram, LinkedIn, X.com - Solid White #FFFFFF text */}
-            <div className="w-full border-t border-[#444444] pt-6 mt-12 flex items-center justify-between relative z-40">
+            {/* Social Links Row: Individual 168px top line segments (div.framer-1tzfzac) for Instagram & LinkedIn */}
+            <div className="w-full mt-12 flex items-center gap-8 relative z-40">
               {[
                 { name: "Instagram", url: "#" },
                 { name: "LinkedIn", url: "#" },
-                { name: "X.com", url: "#" },
               ].map((social, idx) => (
-                <a
-                  key={idx}
-                  href={social.url}
-                  className="text-white hover:text-white/80 transition-colors text-[16px] font-semibold flex items-center gap-1.5"
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                    color: "#FFFFFF",
-                  }}
-                >
-                  {social.name} <span className="text-[14px]">↗</span>
-                </a>
+                <div key={idx} className="flex flex-col gap-3 w-[168px]">
+                  {/* Individual 168x1 top line segment matching div.framer-1tzfzac */}
+                  <div className="w-full h-[1px] bg-white/40" />
+                  <a
+                    href={social.url}
+                    className="text-white hover:text-white/80 transition-colors text-[16px] font-medium flex items-center justify-between"
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      color: "#FFFFFF",
+                    }}
+                  >
+                    <span>{social.name}</span>
+                    <span className="text-[14px]">↗</span>
+                  </a>
+                </div>
               ))}
             </div>
           </div>
