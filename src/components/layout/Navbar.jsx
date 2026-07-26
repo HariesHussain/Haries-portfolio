@@ -33,7 +33,7 @@ const Navbar = () => {
             <img 
               src={logoImage} 
               alt="HARIES Logo" 
-              className="h-[clamp(40px,6vw,72px)] w-auto" 
+              className="h-[clamp(48px,7.5vw,90px)] w-auto object-contain" 
             />
           </a>
 

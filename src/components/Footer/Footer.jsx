@@ -1,4 +1,5 @@
 import Container from "@/components/layout/Container";
+import hiImage from "@/assets/images/hero/hi.png";
 
 const Footer = () => {
   return (
@@ -15,28 +16,15 @@ const Footer = () => {
       >
         <Container>
           <div className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 lg:gap-16">
-            {/* Left Side: Giant Display "haries®" Logo matching Screenshot 2 & 3 */}
+            {/* Left Side: hi.png Footer Logo Image */}
             <div className="flex items-center">
-              <h2
-                className="relative font-bold text-[#0A0A0A] leading-none select-none tracking-[-0.04em] flex items-start"
-                style={{
-                  fontFamily: "'General Sans', 'Inter', sans-serif",
-                  fontSize: "clamp(64px, 9vw, 140px)",
-                  margin: 0,
-                }}
-              >
-                haries
-                <span
-                  className="font-light text-[#0A0A0A] rounded-full border border-[#0A0A0A] flex items-center justify-center leading-none ml-2 mt-2"
-                  style={{
-                    fontSize: "clamp(16px, 2.2vw, 32px)",
-                    width: "1.1em",
-                    height: "1.1em",
-                  }}
-                >
-                  ®
-                </span>
-              </h2>
+              <a href="/" className="flex items-center">
+                <img
+                  src={hiImage}
+                  alt="HARIES Logo"
+                  className="h-[clamp(70px,11vw,140px)] w-auto object-contain"
+                />
+              </a>
             </div>
 
             {/* Right Side: 3-Column Links Grid (464.99 x 105.58 px matching div.framer-1ehd3nt in Screenshot 2 & 3) */}
