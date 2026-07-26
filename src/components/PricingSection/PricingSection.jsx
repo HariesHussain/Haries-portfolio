@@ -174,9 +174,11 @@ const PricingSection = () => {
                   For small business or startups building their first digital presence.
                 </p>
 
-                {/* CTA Button: Light neutral white pill (480x55.2, 14px 22px padding) transitioning to #F9452D on hover */}
-                <button
-                  className="w-full max-w-[480px] bg-white text-[#0A0A0A] border border-[#E0E0E0] shadow-sm rounded-full font-medium text-[16px] transition-all duration-300 hover:bg-[#F9452D] hover:text-white hover:border-[#F9452D] flex items-center justify-center"
+                {/* CTA Button: Light neutral white pill (480x55.2, 14px 22px padding) - Black text by default, turns #F9452D Orange on hover */}
+                <motion.button
+                  whileHover={{ backgroundColor: "#F9452D", color: "#FFFFFF", borderColor: "#F9452D" }}
+                  transition={{ duration: 0.25 }}
+                  className="w-full max-w-[480px] bg-white text-[#0A0A0A] border border-[#E0E0E0] shadow-sm rounded-full font-medium text-[16px] flex items-center justify-center cursor-pointer"
                   style={{
                     fontFamily: "'Inter', sans-serif",
                     padding: "14px 22px",
@@ -185,7 +187,7 @@ const PricingSection = () => {
                   }}
                 >
                   Get in touch
-                </button>
+                </motion.button>
 
                 {/* Feature Bullet Points matching Screenshot 2 */}
                 <div className="flex flex-col gap-4">
@@ -283,9 +285,11 @@ const PricingSection = () => {
                   For established brands looking for a fully tailored experience.
                 </p>
 
-                {/* CTA Button: Solid Black background #0A0A0A with 14px 22px padding transitioning to #F9452D on hover */}
-                <button
-                  className="w-full max-w-[480px] bg-[#0A0A0A] text-white rounded-full font-medium text-[16px] transition-all duration-300 hover:bg-[#F9452D] hover:text-white flex items-center justify-center"
+                {/* CTA Button: Solid Black #0A0A0A by default - Turns #F9452D Orange on hover when cursor is over button */}
+                <motion.button
+                  whileHover={{ backgroundColor: "#F9452D", color: "#FFFFFF" }}
+                  transition={{ duration: 0.25 }}
+                  className="w-full max-w-[480px] bg-[#0A0A0A] text-white rounded-full font-medium text-[16px] flex items-center justify-center cursor-pointer"
                   style={{
                     fontFamily: "'Inter', sans-serif",
                     padding: "14px 22px",
@@ -294,7 +298,7 @@ const PricingSection = () => {
                   }}
                 >
                   Get in touch
-                </button>
+                </motion.button>
 
                 {/* Feature Bullet Points matching Screenshot 2 */}
                 <div className="flex flex-col gap-4">
