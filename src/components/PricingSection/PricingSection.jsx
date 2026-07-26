@@ -27,6 +27,7 @@ const itemVariants = {
 
 const PricingSection = () => {
   const [billingCycle, setBillingCycle] = useState("per_project"); // "per_project" or "monthly"
+  const [isBasicHovered, setIsBasicHovered] = useState(false);
   const [isProHovered, setIsProHovered] = useState(false);
 
   return (
@@ -175,11 +176,16 @@ const PricingSection = () => {
                   For small business or startups building their first digital presence.
                 </p>
 
-                {/* CTA Button: Standard white button for Basic Plan */}
+                {/* CTA Button: White background by default - Turns #F9452D Orange on cursor hover */}
                 <button
-                  className="w-full max-w-[480px] bg-white text-[#0A0A0A] border border-[#E0E0E0] shadow-sm rounded-full font-medium text-[16px] transition-opacity hover:opacity-90 flex items-center justify-center cursor-pointer"
+                  onMouseEnter={() => setIsBasicHovered(true)}
+                  onMouseLeave={() => setIsBasicHovered(false)}
+                  className="w-full max-w-[480px] rounded-full font-medium text-[16px] flex items-center justify-center cursor-pointer transition-all duration-300 shadow-sm"
                   style={{
                     fontFamily: "'Inter', sans-serif",
+                    backgroundColor: isBasicHovered ? "#F9452D" : "#FFFFFF",
+                    color: isBasicHovered ? "#FFFFFF" : "#0A0A0A",
+                    border: isBasicHovered ? "1px solid #F9452D" : "1px solid #E0E0E0",
                     padding: "14px 22px",
                     minHeight: "55.2px",
                     marginBottom: "40px",
