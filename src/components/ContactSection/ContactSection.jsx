@@ -66,17 +66,10 @@ const ContactSection = () => {
 
       <Container className="relative z-30">
         {/* Main Grid: Total Width 1200px x 567.49px matching div.framer-17tmo6c in Screenshot 5 */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
-          className="w-full flex flex-col lg:flex-row justify-between items-center lg:items-start min-h-[567.49px] gap-8 lg:gap-12 relative z-30"
-        >
+        <div className="w-full flex flex-col lg:flex-row justify-between items-center lg:items-start min-h-[567.49px] gap-8 lg:gap-12 relative z-30 opacity-100">
           {/* Left Column: Form Card Container (511.99 x 567.49 px with 48px 40px padding matching div.framer-av919) */}
-          <motion.div
-            variants={itemVariants}
-            className="w-full lg:w-[511.99px] bg-white rounded-[24px] box-border shadow-2xl flex-shrink-0"
+          <div
+            className="w-full lg:w-[511.99px] bg-white rounded-[24px] box-border shadow-2xl flex-shrink-0 relative z-30"
             style={{
               padding: "48px 40px",
               minHeight: "567.49px",
@@ -169,12 +162,11 @@ const ContactSection = () => {
                 Submit
               </button>
             </form>
-          </motion.div>
+          </div>
 
           {/* Right Column: Contact Info Container (568 x 539.55 px matching div.framer-uc25o7 in Screenshot 4) */}
-          <motion.div
-            variants={itemVariants}
-            className="w-full lg:w-[568px] flex flex-col justify-between box-border pt-2"
+          <div
+            className="w-full lg:w-[568px] flex flex-col justify-between box-border pt-2 relative z-30 opacity-100"
             style={{ minHeight: "539.55px" }}
           >
             <div>
@@ -254,8 +246,8 @@ const ContactSection = () => {
                 </a>
               ))}
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </Container>
     </section>
   );
