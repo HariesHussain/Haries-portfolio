@@ -102,7 +102,10 @@ const TestimonialsSection = () => {
                 alt="Ralph Edwards portrait"
                 className="w-full h-full object-cover rounded-[16px]"
                 loading="lazy"
-                style={{ scale: imageScale }}
+                initial={{ scale: 1.2 }}
+                whileInView={{ scale: 1.0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 1.1, ease: [0.25, 0.1, 0.25, 1] }}
               />
             </motion.div>
 
