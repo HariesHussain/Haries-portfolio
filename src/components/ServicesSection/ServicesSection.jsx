@@ -114,7 +114,7 @@ const ServicesSection = () => {
                     boxSizing: "border-box",
                   }}
                 >
-                  <div className="flex items-baseline gap-3">
+                  <div className="flex items-start gap-2">
                     {/* Service Title */}
                     <h3
                       className={`transition-colors duration-300 ${
@@ -133,13 +133,16 @@ const ServicesSection = () => {
                       {service.title}
                     </h3>
 
-                    {/* Superscript Number */}
+                    {/* Superscript Number aligned beside title top */}
                     <span
                       style={{
                         fontFamily: "'Inter', sans-serif",
-                        fontSize: "36px",
+                        fontSize: "32px",
                         fontWeight: 400,
+                        lineHeight: 1,
                         color: isActive ? "#F9452D" : "#404040",
+                        transform: "translateY(-4px)",
+                        display: "inline-block",
                         transition: "color 300ms ease",
                       }}
                     >
@@ -151,67 +154,69 @@ const ServicesSection = () => {
             })}
           </motion.div>
 
-          {/* Right Column: Feature Preview Card (307px width x 462.2px height matching devtools spec) */}
+          {/* Right Column: Feature Preview Card with Reel Scroll Animation */}
           <motion.div
             variants={itemVariants}
             className="w-full flex flex-col flex-shrink-0 min-w-0"
             style={{ width: "307px", maxWidth: "100%", minHeight: "462.2px" }}
           >
-            {/* Image Preview: 307x263 matching devtools spec */}
+            {/* Reel Scroll Image Container */}
             <div
-              className="rounded-[16px] overflow-hidden bg-[#1a1a1a] flex-shrink-0"
+              className="relative rounded-[16px] overflow-hidden bg-[#1a1a1a] flex-shrink-0"
               style={{ width: "307px", maxWidth: "100%", height: "263px" }}
             >
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="popLayout">
                 <motion.img
                   key={activeService.id}
                   src={activeService.image}
                   alt={activeService.title}
-                  className="w-full h-full object-cover rounded-[16px]"
-                  initial={{ opacity: 0, scale: 1.03 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.97 }}
-                  transition={{ duration: 0.35, ease: "easeOut" }}
+                  className="w-full h-full object-cover rounded-[16px] absolute inset-0"
+                  initial={{ y: "100%", opacity: 0.5 }}
+                  animate={{ y: "0%", opacity: 1 }}
+                  exit={{ y: "-100%", opacity: 0.5 }}
+                  transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
                 />
               </AnimatePresence>
             </div>
 
-            {/* Text Container: 307x171.2 matching div.framer-16czr8j with exact 28px top gap */}
+            {/* Reel Scroll Text Container */}
             <div
+              className="relative overflow-hidden"
               style={{
                 marginTop: "28px",
                 width: "307px",
                 maxWidth: "100%",
                 minHeight: "171.2px",
-                display: "flex",
-                flexDirection: "column",
               }}
             >
-              {/* Category Tag: p.framer-text (307x27.2, 16px Inter, #666161) */}
-              <div style={{ minHeight: "27.2px", display: "flex", alignItems: "center" }}>
-                <span
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontSize: "16px",
-                    fontWeight: 400,
-                    color: "#666161",
-                    margin: 0,
-                  }}
+              <AnimatePresence mode="popLayout">
+                <motion.div
+                  key={activeService.id}
+                  initial={{ y: "100%", opacity: 0 }}
+                  animate={{ y: "0%", opacity: 1 }}
+                  exit={{ y: "-100%", opacity: 0 }}
+                  transition={{ duration: 0.45, ease: [0.32, 0.72, 0, 1] }}
+                  className="w-full flex flex-col"
                 >
-                  {activeService.label}
-                </span>
-              </div>
+                  {/* Category Tag */}
+                  <div style={{ minHeight: "27.2px", display: "flex", alignItems: "center" }}>
+                    <span
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontSize: "16px",
+                        fontWeight: 400,
+                        color: "#666161",
+                        margin: 0,
+                      }}
+                    >
+                      {activeService.label}
+                    </span>
+                  </div>
 
-              {/* Paragraph Text: 307x136, 20px Inter, #FFFFFF with exact 8px top gap */}
-              <div style={{ marginTop: "8px", width: "307px", maxWidth: "100%", minHeight: "136px" }}>
-                <AnimatePresence mode="wait">
-                  <motion.p
-                    key={activeService.id}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
+                  {/* Paragraph Text */}
+                  <p
                     style={{
+                      marginTop: "8px",
                       fontFamily: "'Inter', sans-serif",
                       fontSize: "20px",
                       fontWeight: 400,
@@ -221,9 +226,9 @@ const ServicesSection = () => {
                     }}
                   >
                     {activeService.description}
-                  </motion.p>
-                </AnimatePresence>
-              </div>
+                  </p>
+                </motion.div>
+              </AnimatePresence>
             </div>
           </motion.div>
         </motion.div>
