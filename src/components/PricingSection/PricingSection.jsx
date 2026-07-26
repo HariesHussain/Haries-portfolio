@@ -65,7 +65,7 @@ const PricingSection = () => {
             </h2>
           </motion.div>
 
-          {/* Billing Cycle Toggle Pills: Per project / Monthly - 243.87x55.2 with 6px padding matching div.framer-10g82s5 */}
+          {/* Billing Cycle Toggle Pills: Per project / Monthly - 6px container padding matching div.framer-10g82s5 */}
           <motion.div variants={itemVariants} className="mb-16">
             <div
               className="bg-[#F5F5F5] rounded-full inline-flex items-center gap-1 box-border"
@@ -73,23 +73,31 @@ const PricingSection = () => {
             >
               <button
                 onClick={() => setBillingCycle("per_project")}
-                className={`px-6 py-2.5 rounded-full text-[15px] font-medium transition-all duration-300 ${
+                className={`rounded-full text-[16px] font-medium transition-all duration-300 ${
                   billingCycle === "per_project"
                     ? "bg-white text-[#0A0A0A] shadow-sm"
                     : "text-[#666161] hover:text-[#0A0A0A]"
                 }`}
-                style={{ fontFamily: "'Inter', sans-serif" }}
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  padding: "8px 22px",
+                  minHeight: "43.2px",
+                }}
               >
                 Per project
               </button>
               <button
                 onClick={() => setBillingCycle("monthly")}
-                className={`px-6 py-2.5 rounded-full text-[15px] font-medium transition-all duration-300 ${
+                className={`rounded-full text-[16px] font-medium transition-all duration-300 ${
                   billingCycle === "monthly"
                     ? "bg-white text-[#0A0A0A] shadow-sm"
                     : "text-[#666161] hover:text-[#0A0A0A]"
                 }`}
-                style={{ fontFamily: "'Inter', sans-serif" }}
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  padding: "8px 22px",
+                  minHeight: "43.2px",
+                }}
               >
                 Monthly
               </button>
@@ -147,7 +155,7 @@ const PricingSection = () => {
                   </span>
                 </div>
 
-                {/* Subtitle Description */}
+                {/* Subtitle Description: 265x54.4 matching p.framer-text in Screenshot 3 */}
                 <p
                   style={{
                     fontFamily: "'Inter', sans-serif",
@@ -158,15 +166,22 @@ const PricingSection = () => {
                     margin: 0,
                     marginTop: "24px",
                     marginBottom: "32px",
+                    width: "265px",
+                    maxWidth: "100%",
+                    minHeight: "54.4px",
                   }}
                 >
                   For small business or startups building their first digital presence.
                 </p>
 
-                {/* CTA Button: Get in touch */}
+                {/* CTA Button: White background 480x55.2 with 14px 22px padding matching Screenshot 4 */}
                 <button
-                  className="w-full bg-[#0A0A0A] text-white py-4 rounded-full font-medium text-[16px] transition-opacity hover:opacity-90 mb-10"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
+                  className="w-full max-w-[480px] bg-white text-[#0A0A0A] rounded-full font-medium text-[16px] transition-opacity hover:opacity-90 mb-10 flex items-center justify-center"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    padding: "14px 22px",
+                    minHeight: "55.2px",
+                  }}
                 >
                   Get in touch
                 </button>
@@ -259,15 +274,22 @@ const PricingSection = () => {
                     margin: 0,
                     marginTop: "24px",
                     marginBottom: "32px",
+                    width: "265px",
+                    maxWidth: "100%",
+                    minHeight: "54.4px",
                   }}
                 >
                   For established brands looking for a fully tailored experience.
                 </p>
 
-                {/* CTA Button: Get in touch */}
+                {/* CTA Button: Black background 480x55.2 with 14px 22px padding matching Screenshot 5 */}
                 <button
-                  className="w-full bg-[#0A0A0A] text-white py-4 rounded-full font-medium text-[16px] transition-opacity hover:opacity-90 mb-10"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
+                  className="w-full max-w-[480px] bg-[#0A0A0A] text-white rounded-full font-medium text-[16px] transition-opacity hover:opacity-90 mb-10 flex items-center justify-center"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    padding: "14px 22px",
+                    minHeight: "55.2px",
+                  }}
                 >
                   Get in touch
                 </button>
