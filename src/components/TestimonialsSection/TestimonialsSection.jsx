@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Container from "../layout/Container";
 
 const containerVariants = {
@@ -25,8 +26,24 @@ const itemVariants = {
 };
 
 const TestimonialsSection = () => {
+  const sectionRef = useRef(null);
+
+  // Smooth scroll-driven zoom effect for the portrait image
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  // Scales down from 1.18 (zoomed in) to 1.0 (normal) as section centers in view, then scales back to 1.18
+  const imageScale = useTransform(
+    scrollYProgress,
+    [0.1, 0.45, 0.85],
+    [1.18, 1.0, 1.18]
+  );
+
   return (
     <section
+      ref={sectionRef}
       id="testimonials"
       className="w-full bg-[#F5F5F5] relative z-20 flex justify-center min-w-0"
       style={{
@@ -80,11 +97,12 @@ const TestimonialsSection = () => {
               variants={itemVariants}
               className="w-full lg:w-[392px] h-[350px] sm:h-[400px] lg:h-[445px] flex-shrink-0 rounded-[16px] overflow-hidden mb-8 lg:mb-0"
             >
-              <img
+              <motion.img
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
                 alt="Ralph Edwards portrait"
                 className="w-full h-full object-cover rounded-[16px]"
                 loading="lazy"
+                style={{ scale: imageScale }}
               />
             </motion.div>
 
