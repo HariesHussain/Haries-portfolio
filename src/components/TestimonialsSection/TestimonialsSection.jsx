@@ -34,8 +34,8 @@ const TestimonialsSection = () => {
     offset: ["start end", "end start"],
   });
 
-  // Scales down from 1.18 (zoomed in) to 1.0 (normal) as section centers in view, then scales back to 1.18
-  const imageScale = useTransform(scrollYProgress, [0, 1], [1.22, 1.0]);
+  // Scales down from 1.4 (zoomed in) to 1.0 (normal) as section centers in view
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1.4, 1.0]);
 
   return (
     <section

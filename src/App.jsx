@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/sections/Hero";
 import SocialBar from "@/components/SocialBar/SocialBar";
+import AboutSection from "@/components/AboutSection/AboutSection";
 import ProjectsSection from "@/components/ProjectsSection/ProjectsSection";
 import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSection";
 import ServicesSection from "@/components/ServicesSection/ServicesSection";
@@ -40,6 +41,7 @@ function App() {
           className="relative z-10 bg-white"
         >
           <SocialBar />
+          <AboutSection />
           <ProjectsSection />
           <TestimonialsSection />
           <ServicesSection />
