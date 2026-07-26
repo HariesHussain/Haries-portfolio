@@ -65,9 +65,12 @@ const PricingSection = () => {
             </h2>
           </motion.div>
 
-          {/* Billing Cycle Toggle Pills: Per project / Monthly */}
+          {/* Billing Cycle Toggle Pills: Per project / Monthly - 243.87x55.2 with 6px padding matching div.framer-10g82s5 */}
           <motion.div variants={itemVariants} className="mb-16">
-            <div className="bg-[#F5F5F5] p-1.5 rounded-full inline-flex items-center gap-1">
+            <div
+              className="bg-[#F5F5F5] rounded-full inline-flex items-center gap-1 box-border"
+              style={{ padding: "6px" }}
+            >
               <button
                 onClick={() => setBillingCycle("per_project")}
                 className={`px-6 py-2.5 rounded-full text-[15px] font-medium transition-all duration-300 ${
@@ -132,9 +135,13 @@ const PricingSection = () => {
                     </span>
                   </div>
 
+                  {/* Basic Plan Pill: 123.57x43.2 with 8px 22px padding matching div.framer-1agee62 */}
                   <span
-                    className="bg-[#0A0A0A] text-white px-5 py-2.5 rounded-full text-[14px] font-medium flex-shrink-0"
-                    style={{ fontFamily: "'Inter', sans-serif" }}
+                    className="bg-[#0A0A0A] text-white rounded-full text-[14px] font-medium flex-shrink-0"
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      padding: "8px 22px",
+                    }}
                   >
                     Basic Plan
                   </span>
@@ -142,7 +149,6 @@ const PricingSection = () => {
 
                 {/* Subtitle Description */}
                 <p
-                  className="mt-6 mb-8"
                   style={{
                     fontFamily: "'Inter', sans-serif",
                     fontSize: "16px",
@@ -165,11 +171,11 @@ const PricingSection = () => {
                   Get in touch
                 </button>
 
-                {/* Feature Bullet Points */}
+                {/* Feature Bullet Points matching Screenshot 5 */}
                 <div className="flex flex-col gap-4">
                   {[
-                    "2 revisions per page",
-                    "Standard delivery time",
+                    "Competitor analysis",
+                    "Design a Home page +10 inner page",
                     "Basic SEO setup",
                     "Email support",
                   ].map((feature, idx) => (
@@ -230,9 +236,13 @@ const PricingSection = () => {
                     </span>
                   </div>
 
+                  {/* Pro Plan Pill: 8px 22px padding */}
                   <span
-                    className="bg-[#F9452D] text-white px-5 py-2.5 rounded-full text-[14px] font-medium flex-shrink-0"
-                    style={{ fontFamily: "'Inter', sans-serif" }}
+                    className="bg-[#F9452D] text-white rounded-full text-[14px] font-medium flex-shrink-0"
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      padding: "8px 22px",
+                    }}
                   >
                     Pro Plan
                   </span>

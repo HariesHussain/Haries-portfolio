@@ -99,7 +99,7 @@ const StatsSection = () => {
       className="w-full bg-[#F5F5F5] relative z-20 flex justify-center min-w-0"
       style={{
         paddingTop: "0px",
-        paddingBottom: "156px",
+        paddingBottom: "0px",
         paddingLeft: "30px",
         paddingRight: "30px",
       }}
